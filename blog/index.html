@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripsy Blog — Travel Planning Tips & Guides</title>
+    <meta name="description" content="Travel planning tips, app comparisons, and guides from the Tripsy team. Learn how to turn Instagram Reels into real travel plans.">
+    <link rel="canonical" href="https://triply.au/blog">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tripsy Blog — Travel Planning Tips & Guides">
+    <meta property="og:description" content="Travel planning tips, app comparisons, and guides from the Tripsy team.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://triply.au/blog">
+    <meta property="og:image" content="https://triply.au/assets/og-tripsy.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tripsy Blog — Travel Planning Tips & Guides">
+    <meta name="twitter:description" content="Travel planning tips, app comparisons, and guides from the Tripsy team.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-tripsy.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://triply.au"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tripsy",
+          "item": "https://triply.au/tripsy"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Blog",
+          "item": "https://triply.au/blog"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            max-width: 800px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.5rem; opacity: 0.4; }
+
+        /* Hero */
+        .page-hero {
+            padding: 3rem 2rem 4rem; text-align: center;
+            position: relative; max-width: 800px; margin: 0 auto;
+        }
+
+        .orb {
+            position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px);
+        }
+
+        .orb-1 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(194, 113, 133, 0.08) 0%, transparent 70%);
+            top: 0%; left: -10%; animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(15px, -20px); }
+            66% { transform: translate(-10px, 10px); }
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.04em;
+            margin-bottom: 1rem; position: relative;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .page-hero p {
+            font-size: 1.05rem; color: var(--text-muted); max-width: 500px;
+            margin: 0 auto; position: relative; font-weight: 300; line-height: 1.75;
+        }
+
+        /* Blog listing */
+        .blog-section { padding: 0 2rem 5rem; }
+
+        .blog-container { max-width: 800px; margin: 0 auto; }
+
+        .blog-list { display: flex; flex-direction: column; gap: 1rem; }
+
+        .blog-card {
+            display: block;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem 2.25rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0), transparent);
+            transition: background 0.3s;
+        }
+
+        .blog-card:hover::before {
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.5), transparent);
+        }
+
+        .blog-card:hover {
+            border-color: rgba(194, 113, 133, 0.2);
+            background: #15151a;
+            transform: translateY(-2px);
+        }
+
+        .blog-card-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--rose);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card h2 {
+            font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em;
+            margin-bottom: 0.6rem; line-height: 1.35;
+        }
+
+        .blog-card p {
+            color: var(--text-muted); font-size: 0.9rem; font-weight: 300;
+            line-height: 1.65; margin-bottom: 1rem;
+        }
+
+        .blog-card-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            opacity: 0.7;
+        }
+
+        /* CTA */
+        .cta-section { padding: 2rem 2rem 6rem; }
+
+        .cta-box {
+            max-width: 700px; margin: 0 auto;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 4rem 2rem;
+            text-align: center;
+            position: relative; overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+
+        .cta-box h3 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .page-hero { padding: 2rem 1.25rem 3rem; }
+            .blog-section { padding: 0 1.25rem 4rem; }
+            .blog-card { padding: 1.5rem 1.5rem; }
+            .cta-section { padding: 2rem 1.25rem 5rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                tripsy
+            </a>
+            <a href="/blog" class="logo">blog</a>
+        </div>
+        <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Tripsy</a><span class="sep">/</span>
+        <span>Blog</span>
+    </div>
+
+    <main>
+    <section class="page-hero">
+        <div class="orb orb-1"></div>
+
+        <h1 class="fade-in">
+            <span class="rose-text">Tripsy</span> Blog
+        </h1>
+        <p class="fade-in">Travel planning tips, app comparisons, and guides to help you turn travel inspiration into real trips.</p>
+    </section>
+
+    <section class="blog-section">
+        <div class="blog-container">
+            <div class="blog-list">
+                <a href="/blog/best-apps-save-travel-places-instagram-tiktok" class="blog-card fade-in">
+                    <div class="blog-card-label">Apps &amp; Tools</div>
+                    <h2>7 Best Apps to Save Travel Places from Instagram and TikTok (2026)</h2>
+                    <p>The definitive comparison of apps that help you save, organize, and actually visit the travel destinations you discover on social media.</p>
+                    <div class="blog-card-meta">Feb 2026 &middot; 8 min read</div>
+                </a>
+
+                <a href="/blog/saved-travel-reels-went-nowhere" class="blog-card fade-in">
+                    <div class="blog-card-label">Personal</div>
+                    <h2>I Saved 200+ Travel Reels and Went Nowhere — Here's What I Do Now</h2>
+                    <p>A relatable story about the gap between saving travel inspiration and actually using it, and how one simple change fixed everything.</p>
+                    <div class="blog-card-meta">Feb 2026 &middot; 6 min read</div>
+                </a>
+
+                <a href="/blog/tripsy-vs-google-maps" class="blog-card fade-in">
+                    <div class="blog-card-label">Comparison</div>
+                    <h2>Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?</h2>
+                    <p>An honest comparison of two very different tools for organizing your dream travel destinations.</p>
+                    <div class="blog-card-meta">Feb 2026 &middot; 6 min read</div>
+                </a>
+
+                <a href="/blog/ai-travel-planning-2026" class="blog-card fade-in">
+                    <div class="blog-card-label">Thought Leadership</div>
+                    <h2>How AI Is Changing Travel Planning in 2026</h2>
+                    <p>From itinerary generation to reel extraction, AI is transforming how we discover, organize, and plan travel. Here's what's happening.</p>
+                    <div class="blog-card-meta">Feb 2026 &middot; 7 min read</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-box fade-in">
+            <h3>Ready to plan your next trip?</h3>
+            <p>Turn the reels you save into organized travel bucket lists with Tripsy.</p>
+            <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Tripsy
+            </a>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/destinations">Destinations</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

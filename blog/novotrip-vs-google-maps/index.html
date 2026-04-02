@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?</title>
+    <meta name="description" content="An honest comparison of Tripsy and Google Maps for building travel bucket lists. Google Maps excels at navigation, but Tripsy is purpose-built for turning Instagram Reels into organized travel plans.">
+    <link rel="canonical" href="https://triply.au/blog/tripsy-vs-google-maps">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?">
+    <meta property="og:description" content="An honest comparison of Tripsy and Google Maps for building travel bucket lists.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/tripsy-vs-google-maps">
+    <meta property="og:image" content="https://triply.au/assets/og-tripsy.png">
+    <meta property="article:published_time" content="2026-02-15">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?">
+    <meta name="twitter:description" content="An honest comparison of Tripsy and Google Maps for building travel bucket lists.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-tripsy.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Tripsy", "item": "https://triply.au/tripsy" },
+        { "@type": "ListItem", "position": 3, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 4, "name": "Tripsy vs Google Maps", "item": "https://triply.au/blog/tripsy-vs-google-maps" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?",
+      "description": "An honest comparison of Tripsy and Google Maps for building travel bucket lists from Instagram Reels and social media content.",
+      "datePublished": "2026-02-15",
+      "dateModified": "2026-02-15",
+      "author": {
+        "@type": "Organization",
+        "name": "Tripsy by Aucto AI",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/tripsy-vs-google-maps",
+      "image": "https://triply.au/assets/og-tripsy.png"
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            margin: 2rem 0; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; font-size: 0.9rem;
+        }
+        .comparison-table th {
+            padding: 1rem 1.25rem; text-align: left;
+            font-weight: 600; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(194, 113, 133, 0.05);
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #c8c8cd; font-weight: 300;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .feature-name { color: var(--text); font-weight: 500; }
+        .check { color: #34d399; }
+        .cross { color: #f87171; }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.85rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">tripsy</a>
+        </div>
+        <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Tripsy</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>Tripsy vs Google Maps</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Comparison</div>
+            <h1>Tripsy vs Google Maps: Which Is Better for <span class="rose-text">Travel Bucket Lists</span>?</h1>
+            <div class="article-meta">Feb 15, 2026 &middot; 6 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>Every time I mention using a dedicated app for travel bucket lists, someone says "why don't you just use Google Maps?" And honestly? Fair question.</p>
+
+            <p>Google Maps is incredible. I use it every single day. It's free, it's everywhere, and for navigation and finding stuff nearby, nothing comes close. I'm not about to pretend otherwise.</p>
+
+            <p>But building a travel bucket list from Instagram Reels? That's a completely different thing. And it's a thing Google Maps was never built to do.</p>
+
+            <p>I've been using both for a while now, so here's my honest breakdown of where each one wins and where it falls short.</p>
+
+            <h2>The Quick Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Tripsy</th>
+                        <th>Google Maps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Extract places from Instagram Reels</td>
+                        <td><span class="check">Yes — AI-powered, automatic</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Save places from social media</td>
+                        <td><span class="check">Yes — share directly from Instagram</span></td>
+                        <td><span class="cross">Manual search required</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Interactive map</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="check">Yes (industry-leading)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Collections / organized lists</td>
+                        <td><span class="check">Yes — by trip, theme, vibe</span></td>
+                        <td><span class="check">Basic lists</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Navigation & directions</td>
+                        <td><span class="cross">No (not its purpose)</span></td>
+                        <td><span class="check">Yes (best in class)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Business info (hours, reviews)</td>
+                        <td><span class="cross">Limited</span></td>
+                        <td><span class="check">Yes (comprehensive)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI destination extraction</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Offline access</td>
+                        <td><span class="cross">Coming soon</span></td>
+                        <td><span class="check">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Price</td>
+                        <td>Free</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Platform</td>
+                        <td>iOS</td>
+                        <td>iOS, Android, Web</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>That table basically tells the whole story -- these are tools built for completely different jobs. But let me get into the details because the differences are bigger than they look.</p>
+
+            <h2>Where Google Maps Wins (and It's Not Close)</h2>
+
+            <h3>Navigation and Directions</h3>
+
+            <p>I mean, obviously. Google Maps is the best navigation tool on the planet. Real-time traffic, transit schedules, walking routes, bike paths -- it handles everything. Tripsy doesn't do navigation and doesn't try to. When you're actually on the ground trying to get to that restaurant, you're opening Google Maps. No question.</p>
+
+            <h3>Business Information</h3>
+
+            <p>Want to know if that cafe is open right now? Google Maps has hours, phone numbers, millions of reviews, photos, even how busy it is at 2pm on a Wednesday. That kind of deep, operational data is something Google spent decades building. Tripsy doesn't have it and probably shouldn't try to compete with it.</p>
+
+            <h3>Universal Availability</h3>
+
+            <p>Google Maps works on iOS, Android, the web, your grandma's tablet. It works offline. Tripsy is iOS-only right now. If you're on Android, that's kind of the end of the conversation (for now at least).</p>
+
+            <h3>Street View</h3>
+
+            <p>Being able to virtually walk through a neighborhood before you visit? Actually super useful for trip planning. Google's Street View coverage is unmatched and no bucket-list app is going to replicate that.</p>
+
+            <h2>Where Tripsy Wins</h2>
+
+            <h3>The Reel-to-Plan Problem</h3>
+
+            <p>Here's the thing about Google Maps for bucket lists: there's no way to go from "I saw a cool reel" to "these places are saved." The pipeline just doesn't exist.</p>
+
+            <p>Say you watch a reel called "15 Best Restaurants in Barcelona." You want to save all fifteen. Here's what that looks like with Google Maps:</p>
+
+            <ol>
+                <li>Open Google Maps</li>
+                <li>Try to remember the first restaurant name</li>
+                <li>Search for it (hope you spelled it right)</li>
+                <li>Find the right one -- there are three with similar names</li>
+                <li>Tap Save, pick a list</li>
+                <li>Go back, try to remember restaurant number two</li>
+                <li>Repeat 13 more times</li>
+            </ol>
+
+            <p>That's fifteen searches, fifteen saves, and at least ten minutes of work. And let's be real, you probably forgot half the names before you even opened Maps.</p>
+
+            <p>With <a href="/">Tripsy</a>, you share the reel. All fifteen restaurants show up on a map. You toss them into your "Barcelona" collection. Done. Maybe ten seconds.</p>
+
+            <p>This isn't a minor difference. It's the difference between a system you'll actually use and one you abandon after the second restaurant because honestly who has the patience for that.</p>
+
+            <h3>It Figures Out the Places For You</h3>
+
+            <p>Google Maps needs you to already know what you're looking for. You have to remember the name, spell it right, and search for it. Tripsy's AI watches the reel and figures it out -- names mentioned in the voiceover, text that flashes on screen for two seconds, even places that are shown visually but never actually named.</p>
+
+            <p>And travel reels are fast. Creators mispronounce things. Names are on screen for maybe a second and a half. I tested this with a reel where a creator said the name of a cafe so fast I had to replay it three times to catch it. Tripsy got it on the first pass.</p>
+
+            <h3>Organization That Doesn't Suck</h3>
+
+            <p>Google Maps lets you save to lists, but the options are pretty basic. You get a list called "Barcelona" and another called "Want to Go" and... that's about it. No way to see which reel a place came from. Limited categorization. It gets messy fast.</p>
+
+            <p>Tripsy's collections are built around how I actually think about travel: by trip ("Japan 2026"), by vibe ("Date Night Spots"), by urgency ("Dream List" vs "Actually Booked"). And each place remembers where it came from, so I can trace back to the original reel if I want to rewatch it.</p>
+
+            <h3>Discovery vs. Search</h3>
+
+            <p>This is the fundamental difference. Google Maps assumes you already know what you're looking for. Tripsy assumes you're discovering places through content you're already watching. Different starting points, different tools.</p>
+
+            <div class="callout">
+                <p><strong>My honest take:</strong> Google Maps is the better app overall. It does a hundred things and does most of them really well. But for the specific thing I need -- turning travel reels into organized bucket lists -- it just wasn't built for that. Tripsy was. I use both and I think most people should too.</p>
+            </div>
+
+            <h2>How I Actually Use Both Together</h2>
+
+            <p>In practice, here's what my workflow looks like:</p>
+
+            <ol>
+                <li><strong>Scrolling and saving:</strong> I see a travel reel, share it to Tripsy. It grabs the places, I sort them into collections. Takes seconds.</li>
+                <li><strong>Before a trip:</strong> I open my Tripsy collection for that city. All the recommendations from months of casual reel-watching are right there on a map.</li>
+                <li><strong>On the ground:</strong> Google Maps for everything. Navigation, checking if that restaurant is open, figuring out how to get from the temple to the ramen shop.</li>
+            </ol>
+
+            <p>So Tripsy handles the "before" -- finding and saving places over time. Google Maps handles the "while you're there" -- getting around and logistics. They're not competing. They're doing totally different jobs.</p>
+
+            <h2>When Google Maps Is All You Need</h2>
+
+            <p>Honestly, Google Maps Saved Places is totally fine if:</p>
+
+            <ul>
+                <li>You mostly get travel recs from friends, not Instagram</li>
+                <li>You only save a handful of places at a time (and don't mind the manual work)</li>
+                <li>You want everything in one app</li>
+                <li>You're on Android -- Tripsy is iOS-only right now, so this is kind of a non-choice</li>
+                <li>You already know where you're going</li>
+            </ul>
+
+            <h2>When You Need Tripsy</h2>
+
+            <p><a href="/">Tripsy</a> makes a lot more sense if:</p>
+
+            <ul>
+                <li>You save travel reels constantly (like, more than you'd care to admit)</li>
+                <li>You want the places from those reels without the manual extraction headache</li>
+                <li>Your bucket list is built from social media content, not guidebooks</li>
+                <li>You want collections organized by trip instead of one giant list</li>
+                <li>You're tired of saving reels and then never doing anything with them</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p>This isn't really a "vs" comparison. That's kind of the whole point. These tools solve different problems.</p>
+
+            <p><strong>Google Maps is the best navigation and local search tool on the planet.</strong> Full stop. Use it on the ground. Use it for directions. Use it to check if that restaurant is open on Mondays.</p>
+
+            <p><strong>Tripsy is the best thing I've found for turning Instagram travel content into organized, usable bucket lists.</strong> Use it when you see a reel you love. Use it to build trip collections over time. Use it because you're never going to manually type 15 restaurant names into Google Maps at midnight.</p>
+
+            <p>I use both. Tripsy for the dreaming and saving. Google Maps for the doing. And I've actually visited places I found on Instagram now, instead of letting them rot in my saved folder. Which was kind of the whole point.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>Build better bucket lists.</h3>
+            <p>Tripsy turns travel reels into organized, mapped collections — automatically.</p>
+            <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Tripsy
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/best-apps-save-travel-places-instagram-tiktok" class="related-link">
+                    7 Best Apps to Save Travel Places from Instagram and TikTok (2026)
+                    <span>Full comparison of all travel-saving apps.</span>
+                </a>
+                <a href="/blog/saved-travel-reels-went-nowhere" class="related-link">
+                    I Saved 200+ Travel Reels and Went Nowhere — Here's What I Do Now
+                    <span>The relatable problem behind why bucket list tools matter.</span>
+                </a>
+                <a href="/blog/ai-travel-planning-2026" class="related-link">
+                    How AI Is Changing Travel Planning in 2026
+                    <span>The technology that makes reel extraction possible.</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

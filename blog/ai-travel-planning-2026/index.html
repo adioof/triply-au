@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI Is Changing Travel Planning in 2026</title>
+    <meta name="description" content="AI is transforming travel planning in 2026 — from extracting destinations from Instagram Reels to generating full itineraries. Here's what's happening and what it means for travelers.">
+    <link rel="canonical" href="https://triply.au/blog/ai-travel-planning-2026">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How AI Is Changing Travel Planning in 2026">
+    <meta property="og:description" content="AI is transforming travel planning — from reel extraction to itinerary generation. Here's what's happening.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/ai-travel-planning-2026">
+    <meta property="og:image" content="https://triply.au/assets/og-tripsy.png">
+    <meta property="article:published_time" content="2026-02-10">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How AI Is Changing Travel Planning in 2026">
+    <meta name="twitter:description" content="AI is transforming travel planning — from reel extraction to itinerary generation. Here's what's happening.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-tripsy.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Tripsy", "item": "https://triply.au/tripsy" },
+        { "@type": "ListItem", "position": 3, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 4, "name": "How AI Is Changing Travel Planning in 2026", "item": "https://triply.au/blog/ai-travel-planning-2026" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How AI Is Changing Travel Planning in 2026",
+      "description": "AI is transforming travel planning in 2026 — from extracting destinations from Instagram Reels to generating full itineraries.",
+      "datePublished": "2026-02-10",
+      "dateModified": "2026-02-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Tripsy by Aucto AI",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/ai-travel-planning-2026",
+      "image": "https://triply.au/assets/og-tripsy.png"
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">tripsy</a>
+        </div>
+        <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Tripsy</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>AI Travel Planning 2026</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Thought Leadership</div>
+            <h1>How AI Is Changing <span class="rose-text">Travel Planning</span> in 2026</h1>
+            <div class="article-meta">Feb 10, 2026 &middot; 7 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>Be honest: how do you plan a trip? You probably Google "best things to do in [city]," open like eight blog posts in tabs you'll never finish reading, check TripAdvisor, maybe build a rough list in Notes or a spreadsheet. If you're organized, you pin some places on Google Maps. If you're me, you tell yourself you'll "figure it out when you get there."</p>
+
+            <p>That workflow hasn't really changed in twenty years. But in 2026, it's starting to crack. Not because the old way stopped working, but because AI can now do some of the tedious parts so much faster that doing them manually feels kind of silly. We're still early, but the shift is real.</p>
+
+            <p>Here's what's actually happening -- and what's still mostly hype.</p>
+
+            <h2>Three Stages, Three Different Levels of Progress</h2>
+
+            <p>I think about travel planning as three stages: <strong>Discovery</strong> (finding places you want to go), <strong>Organization</strong> (sorting and prioritizing), and <strong>Planning</strong> (building the actual itinerary). AI is making moves in all three, but some are way further along than others.</p>
+
+            <h3>Stage 1: Discovery -- This One's Actually Working</h3>
+
+            <p>The old way was search-based. You typed "best restaurants in Lisbon" into Google and read through SEO-optimized listicles that were probably last updated in 2022. It worked, but it was slow and weirdly disconnected from how people actually find travel recs now.</p>
+
+            <p>In 2026, most travel discovery happens on Instagram Reels and TikTok. A creator walks through a neighborhood and names fifteen places in sixty seconds. That's more specific, more current, and honestly more trustworthy than a blog post -- you can see the place, hear the recommendation, and judge the vibe for yourself.</p>
+
+            <p>The problem? Social media was built for watching, not for note-taking. When a reel rattles off a dozen restaurant names in thirty seconds, your brain can't capture them all. And saving the reel just defers the problem to Future You, who also won't do it.</p>
+
+            <p>This is where AI extraction is genuinely useful. Apps like <a href="/">Tripsy</a> analyze the audio, on-screen text, captions, and visual context of a reel and pull out every specific destination. One reel becomes a mapped list of places. The AI does in seconds what used to take me twenty minutes with a notepad and a lot of pausing.</p>
+
+            <div class="callout">
+                <p><strong>The real shift:</strong> Discovery is moving from "I go looking for recommendations" to "recommendations show up in my feed and AI turns them into something I can actually use." Your job becomes curation, not data entry.</p>
+            </div>
+
+            <h3>Stage 2: Organization -- Getting There, Slowly</h3>
+
+            <p>Once you've found places you want to visit, you need to organize them. And until recently this meant Google Sheets, Notion databases, or a Google Maps saved list that becomes an unreadable mess after about 30 entries.</p>
+
+            <p>AI is starting to help here in a few ways:</p>
+
+            <ul>
+                <li><strong>Automatic categorization.</strong> AI can tag a place as "restaurant" vs "viewpoint" vs "museum" without you manually labeling each one. Small thing, but it adds up.</li>
+                <li><strong>Smart grouping.</strong> Instead of you creating lists by hand, AI can suggest collections based on geography or type. "These 8 places are all in Shibuya" -- that kind of thing.</li>
+                <li><strong>Deduplication.</strong> Three different reels recommend the same rooftop bar in Barcelona? AI recognizes it's the same place instead of creating three entries. This one's more useful than it sounds.</li>
+                <li><strong>Consensus picks.</strong> When a place shows up in recs from multiple creators, it gets flagged as higher-priority. Basically crowd-sourced "you should definitely go here."</li>
+            </ul>
+
+            <p>I'll be honest though: we're still early on this stuff. Most apps handle basic auto-categorization and the fancier features are just starting to show up. But the direction is obvious -- organizing your travel saves shouldn't be a manual chore.</p>
+
+            <h3>Stage 3: Planning -- Overhyped but Improving</h3>
+
+            <p>This is the stage getting all the press. Every other startup is building an "AI itinerary generator" -- you give it a destination, dates, and your preferences and it spits out a day-by-day plan. ChatGPT can do this. Google's travel features can do this. Layla, Wonderplan, and a dozen others can do this.</p>
+
+            <p>And some of them are... fine? Like, they'll generate a reasonable-looking itinerary. But here's what nobody talks about: <strong>most AI-generated itineraries are built from generic data, not from places you actually care about.</strong></p>
+
+            <p>Ask any AI for "5 days in Tokyo" and you'll get: Shibuya day one, Asakusa day two, Shinjuku day three. OK, sure. But it won't include the specific ramen shop you saved from a creator's reel three months ago, or the jazz bar in Shimokitazawa your friend told you about, or that hidden garden you bookmarked at midnight and forgot the name of.</p>
+
+            <p>The real power -- and I think this is where things are headed -- is when AI connects all three stages. The places you discovered from reels, organized into collections, become the actual building blocks of your itinerary. That pipeline is being built right now, and it's way more interesting than another generic "plan my trip" chatbot.</p>
+
+            <h2>What's Actually Working vs. What's Still Hype</h2>
+
+            <p>Let me be specific, because there's a lot of "AI will plan your entire trip!" marketing out there and some of it is... optimistic.</p>
+
+            <h3>Things That Genuinely Work Right Now</h3>
+
+            <ul>
+                <li><strong>Content extraction.</strong> Pulling specific places out of video content is reliable and fast. I've been impressed with Tripsy's accuracy on Instagram Reels -- it catches places I missed on my first watch. Like, consistently.</li>
+                <li><strong>Geocoding and mapping.</strong> Turning "Blue Mosque, Istanbul" into coordinates on a map? Solved problem. AI does this instantly for well-known places.</li>
+                <li><strong>Basic itinerary generation.</strong> Give AI a list of places and a timeframe and it'll build a reasonable day-by-day plan. It knows to group nearby places together and won't schedule dinner at 3am. Low bar, but it clears it.</li>
+                <li><strong>Answering specific questions.</strong> "What are the best neighborhoods for street food in Bangkok?" -- AI gives genuinely useful answers to these now. Way better than a year ago.</li>
+            </ul>
+
+            <h3>Things That Are Getting Better But Aren't There Yet</h3>
+
+            <ul>
+                <li><strong>Personalization.</strong> AI knows what's popular. It doesn't really know what's right for you. A couple looking for romantic dinners and a group of college friends looking for late-night spots need very different recs, and AI still tends to give everyone the same "top rated" list. Getting better, but slowly.</li>
+                <li><strong>Real-time awareness.</strong> AI can tell you about a restaurant. It might not know that restaurant closed two months ago, or is under renovation, or changed its menu completely. The data lag is real.</li>
+                <li><strong>Complex multi-city trips.</strong> Planning two weeks across five countries with different budgets, visa requirements, and transportation options? AI still struggles with this. Simple trips are fine. Complexity breaks things.</li>
+                <li><strong>Budget stuff.</strong> AI can suggest places, but balancing a trip budget across hotels, food, activities, and transport is still pretty much a manual exercise. No one's cracked this yet.</li>
+            </ul>
+
+            <h2>AI Isn't Replacing Travel Planning. It's Removing the Boring Parts.</h2>
+
+            <p>I think this is the thing most people get wrong about AI and travel. <strong>It's not replacing the human experience of traveling, or even the fun parts of planning.</strong> It's replacing the tedious stuff -- the data entry, the extraction, the organization -- that sits between "I want to go there" and actually going.</p>
+
+            <p>You still choose where to go. You still get to daydream about future trips. You still wander through an unfamiliar city and stumble into places no algorithm would have suggested. AI just makes the gap between "I saw this incredible place on Instagram" and "I'm standing there" a little shorter.</p>
+
+            <p>And that matters more than it sounds. Think about how many trips you've thought about but never booked. How many saved reels represent places you genuinely want to visit but probably never will -- not because of money or time, but because the friction of turning inspiration into an actual plan was just high enough to stop you.</p>
+
+            <p>AI chips away at that friction. Not to zero, but meaningfully. And when the average person is saving dozens of travel reels a month, even a small reduction in planning friction means more people actually take the trips they've been dreaming about.</p>
+
+            <h2>What's Probably Coming Next</h2>
+
+            <p>Looking at where things are headed, a few predictions feel pretty safe:</p>
+
+            <ul>
+                <li><strong>All-in-one travel assistants</strong> that handle the full pipeline -- from reel extraction to booking -- without you switching between five apps. Right now the tools are fragmented. That'll consolidate.</li>
+                <li><strong>Group trip AI.</strong> Planning a trip with six friends is a nightmare (anyone who's been in that group chat knows). AI is actually well-suited for this -- surfacing places everyone agrees on, managing different preferences, sorting out scheduling conflicts.</li>
+                <li><strong>Proactive suggestions.</strong> "You seem to love coastal towns with great seafood. Have you considered Porto?" Based on your saved places and travel history, AI will start recommending things you haven't discovered yet. Some apps are already experimenting with this.</li>
+                <li><strong>Real-time replanning.</strong> It's raining on your outdoor day in Kyoto. AI that knows your saved places and preferences suggests an alternative plan with indoor stuff you'd actually enjoy. Not a stretch -- the data is there, someone just needs to connect it.</li>
+            </ul>
+
+            <h2>What You Should Actually Do About This</h2>
+
+            <p>OK, practical takeaways. The tools available right now are genuinely better than they were even two years ago, and they're improving fast. Here's what I'd recommend:</p>
+
+            <ol>
+                <li><strong>Stop saving reels. Start extracting places.</strong> Use something like <a href="/">Tripsy</a> to turn travel content into actual mapped destinations. A saved reel is a dead end. An extracted place is somewhere you can actually go.</li>
+                <li><strong>Build collections over time.</strong> The best trip plans aren't built in one weekend. They accumulate over months of casual scrolling. Let AI help you organize as you go -- future you will thank you when it's time to book.</li>
+                <li><strong>Use AI itineraries as a starting point, then make them yours.</strong> Let AI build the scaffolding from your saved places, then adjust it. You know your own pace, your energy levels, whether you're a "wake up at 6am and see everything" person or a "one thing in the morning, long lunch, nap" person.</li>
+                <li><strong>Keep your own judgment for the stuff that matters.</strong> AI knows which restaurant is highly rated. Only you know if you want a quiet dinner or a loud one, if you want to eat early and walk after, or if you'd rather skip the famous spot entirely and find something on your own.</li>
+            </ol>
+
+            <p>AI isn't going to plan your perfect trip for you. I don't think it should. But it's removing the tedious parts that have always been the bottleneck between "I want to go there" and actually going. And for the millions of people with saved-reel graveyards full of places they'll never visit, that's a pretty big deal.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>See AI travel extraction in action.</h3>
+            <p>Tripsy uses AI to turn Instagram Reels into mapped, organized travel bucket lists.</p>
+            <a href="https://apps.apple.com/us/app/tripsy-ai-travel-curator/id6758535253" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Tripsy
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/best-apps-save-travel-places-instagram-tiktok" class="related-link">
+                    7 Best Apps to Save Travel Places from Instagram and TikTok (2026)
+                    <span>A practical comparison of the best tools available today.</span>
+                </a>
+                <a href="/blog/saved-travel-reels-went-nowhere" class="related-link">
+                    I Saved 200+ Travel Reels and Went Nowhere — Here's What I Do Now
+                    <span>The personal story behind why extraction matters.</span>
+                </a>
+                <a href="/blog/tripsy-vs-google-maps" class="related-link">
+                    Tripsy vs Google Maps: Which Is Better for Travel Bucket Lists?
+                    <span>Where purpose-built AI tools outperform general maps.</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
