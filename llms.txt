@@ -1,0 +1,56 @@
+# Triply
+
+> Turn Instagram Reels into travel bucket lists. Triply is an AI-powered iOS app that extracts every travel destination from Instagram Reels — restaurants, landmarks, beaches, hotels — and maps them automatically. Free on the App Store.
+
+## What is Triply?
+
+Triply is an iOS app that solves a simple problem: you save travel Reels on Instagram but never actually visit those places. Triply extracts every location mentioned in a Reel using AI, pins them on an interactive map, and lets you organize them into collections. Share a Reel or paste a URL — Triply does the rest.
+
+## How it works
+
+1. Share an Instagram Reel to Triply or paste the URL
+2. AI analyzes the video and extracts every destination mentioned or shown
+3. All places appear on an interactive map with detail cards
+4. Save them to your bucket list and organize into collections by trip, region, or vibe
+
+## Key Features
+
+- Reel to Bucket List — paste a Reel URL, get every place extracted automatically
+- Interactive Map — all locations plotted on one map
+- Collections — organize saved places by trip, vibe, or region
+- Manual Search — search and add any place worldwide
+- AI-Powered — understands context, not just keywords
+
+## What kind of Reels work?
+
+City guides, food tours, hidden gems, road trip itineraries, hotel reviews, beach roundups, restaurant recommendations, walking tours, and more. Tested with Reels from 50+ countries.
+
+## Pricing
+
+5 free extractions every month. Free to download on iOS.
+
+## Built by
+
+Aucto AI — founded by Aditya Agarwal (@adioof), software engineer based in Sydney, Australia.
+
+## Links
+
+- Website: https://triply.au
+- App Store: https://apps.apple.com/us/app/triply-ai-travel-curator/id6758535253
+- Destinations: https://triply.au/destinations
+- Blog: https://triply.au/blog
+
+## Destination Guides
+
+Triply has bucket list guides for 30 destinations: Amalfi Coast, Amsterdam, Bali, Bangkok, Barcelona, Buenos Aires, Cape Town, Dubai, Dubrovnik, Florence, Hanoi, Istanbul, Jaipur, Kyoto, Lisbon, London, Marrakech, Medellin, Mexico City, New York, Osaka, Paris, Prague, Reykjavik, Rome, Santorini, Seoul, Singapore, Sydney, Tokyo.
+
+Each guide includes top places to visit, insider tips, and best times to travel.
+
+## Blog
+
+- How to Save Places from Instagram Reels (5 Methods Compared)
+- The Best Travel Bucket List App in 2026
+- 7 Best Apps to Save Travel Places from Instagram and TikTok
+- I Saved 200+ Travel Reels and Went Nowhere — Here's What I Do Now
+- Triply vs Google Maps: Which Is Better for Travel Bucket Lists?
+- How AI Is Changing Travel Planning in 2026
