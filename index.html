@@ -135,20 +135,24 @@
     </script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg: #0a0a0b;
             --surface: #111114;
+            --surface-2: #16161a;
             --border: #1c1c22;
+            --border-light: #2a2a33;
             --text: #fafafa;
+            --text-secondary: #a1a1aa;
             --text-muted: #71717a;
             --rose: #c27185;
             --rose-light: #d4899b;
             --rose-dim: rgba(194, 113, 133, 0.08);
             --rose-glow: rgba(194, 113, 133, 0.12);
+            --rose-glow-strong: rgba(194, 113, 133, 0.25);
         }
 
         html { scroll-behavior: smooth; }
@@ -158,290 +162,550 @@
             background: var(--bg); color: var(--text);
             line-height: 1.6; overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Nav */
+        /* ---- NAV ---- */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            padding: 1.25rem 2rem;
+            padding: 0 2rem;
+            height: 64px;
             display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            background: rgba(10, 10, 11, 0.85);
-            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            background: rgba(10, 10, 11, 0.72);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background 0.3s;
         }
 
-        .nav-left { display: flex; align-items: center; gap: 2rem; }
+        .nav-left { display: flex; align-items: center; gap: 2.5rem; }
 
         .logo {
-            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            font-size: 1.2rem; font-weight: 700; color: var(--text);
             text-decoration: none; letter-spacing: -0.03em;
+            display: flex; align-items: center; gap: 0.5rem;
         }
+
+        .logo-icon {
+            width: 28px; height: 28px; border-radius: 7px;
+            background: linear-gradient(135deg, var(--rose), var(--rose-light));
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .nav-links { display: flex; gap: 1.75rem; }
+        .nav-links a {
+            font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+            font-weight: 500; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-secondary); }
 
         .nav-cta {
-            font-size: 0.85rem; color: var(--rose);
-            border: 1px solid rgba(194, 113, 133, 0.3);
-            padding: 0.5rem 1.25rem; border-radius: 8px;
-            text-decoration: none; font-weight: 500; transition: all 0.2s;
+            font-size: 0.82rem; color: var(--text);
+            background: rgba(194, 113, 133, 0.12);
+            border: 1px solid rgba(194, 113, 133, 0.25);
+            padding: 0.45rem 1.2rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.25s;
+        }
+        .nav-cta:hover {
+            background: rgba(194, 113, 133, 0.2);
+            border-color: rgba(194, 113, 133, 0.45);
+            box-shadow: 0 0 20px rgba(194, 113, 133, 0.1);
         }
 
-        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
-
-        /* Hero */
+        /* ---- HERO ---- */
         .hero {
-            min-height: 100vh;
+            min-height: 100vh; position: relative;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 8rem 2rem 4rem; position: relative;
+            text-align: center; padding: 8rem 2rem 4rem;
+            overflow: hidden;
         }
 
-        .orb {
-            position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px);
+        /* Aurora mesh gradient background */
+        .hero-bg {
+            position: absolute; inset: 0; z-index: 0; overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute; width: 150%; height: 150%;
+            top: -25%; left: -25%;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 50%, rgba(194, 113, 133, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 60% at 80% 30%, rgba(212, 137, 155, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 50% at 50% 80%, rgba(194, 113, 133, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 40% at 60% 20%, rgba(160, 90, 120, 0.05) 0%, transparent 50%);
+            animation: auroraDrift 12s ease-in-out infinite alternate;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute; width: 130%; height: 130%;
+            top: -15%; left: -15%;
+            background:
+                radial-gradient(ellipse 50% 40% at 70% 60%, rgba(194, 113, 133, 0.09) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 50% at 30% 40%, rgba(180, 100, 130, 0.07) 0%, transparent 50%);
+            animation: auroraDrift2 15s ease-in-out infinite alternate;
         }
 
-        .orb-1 {
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(194, 113, 133, 0.1) 0%, transparent 70%);
-            top: 20%; left: 15%; animation: float 8s ease-in-out infinite;
+        @keyframes auroraDrift {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            100% { transform: translate(30px, -20px) rotate(3deg) scale(1.05); }
+        }
+        @keyframes auroraDrift2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, 15px) rotate(-2deg); }
         }
 
-        .orb-2 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(212, 137, 155, 0.06) 0%, transparent 70%);
-            top: 30%; right: 10%; animation: float 10s ease-in-out infinite reverse;
+        .hero-content {
+            position: relative; z-index: 1;
+            display: flex; flex-direction: column; align-items: center;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            33% { transform: translate(15px, -20px); }
-            66% { transform: translate(-10px, 10px); }
-        }
+        /* Stagger animations */
+        .hero-anim { opacity: 0; transform: translateY(30px); animation: heroFadeUp 0.8s ease-out forwards; }
+        .hero-anim-1 { animation-delay: 0.1s; }
+        .hero-anim-2 { animation-delay: 0.25s; }
+        .hero-anim-3 { animation-delay: 0.4s; }
+        .hero-anim-4 { animation-delay: 0.55s; }
+        .hero-anim-5 { animation-delay: 0.7s; }
+        .hero-anim-6 { animation-delay: 0.85s; }
 
-        .app-icon-hero {
-            width: 88px; height: 88px; background: var(--bg);
-            border-radius: 22px; display: flex; align-items: center; justify-content: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border);
-            position: relative; animation: iconFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
-            font-size: clamp(2.75rem, 7vw, 5rem); font-weight: 800;
-            line-height: 1.08; letter-spacing: -0.04em;
-            margin-bottom: 1.5rem; position: relative;
+            font-size: clamp(3rem, 8vw, 6rem); font-weight: 900;
+            line-height: 1.04; letter-spacing: -0.045em;
+            margin-bottom: 1.75rem;
         }
 
-        .hero h1 .rose-text {
-            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        .gradient-text {
+            background: linear-gradient(135deg, var(--rose) 0%, var(--rose-light) 40%, #e8a0b0 60%, var(--rose) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShimmer {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 200% center; }
         }
 
         .hero-sub {
-            font-size: 1.2rem; color: var(--text-muted); max-width: 500px;
-            margin-bottom: 3rem; position: relative; font-weight: 300; line-height: 1.75;
+            font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted);
+            max-width: 540px; margin-bottom: 2.5rem;
+            font-weight: 300; line-height: 1.8;
         }
 
         .hero-actions {
-            display: flex; gap: 1rem; align-items: center; position: relative;
+            display: flex; gap: 1rem; align-items: center;
             flex-wrap: wrap; justify-content: center;
         }
 
         .btn-primary {
             display: inline-flex; align-items: center; gap: 0.6rem;
             background: var(--rose); color: white;
-            padding: 0.9rem 2rem; border-radius: 12px;
+            padding: 0.85rem 2rem; border-radius: 12px;
             text-decoration: none; font-weight: 600; font-size: 0.95rem;
-            transition: all 0.25s;
-            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(194, 113, 133, 0.25), inset 0 1px 0 rgba(255,255,255,0.1);
         }
-
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(194, 113, 133, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+        }
 
         .btn-secondary {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            color: var(--text-muted); padding: 0.9rem 1.75rem;
+            color: var(--text-muted); padding: 0.85rem 1.75rem;
             border-radius: 12px; text-decoration: none;
             font-weight: 500; font-size: 0.95rem;
-            border: 1px solid var(--border); transition: all 0.25s;
+            border: 1px solid var(--border); transition: all 0.3s;
+            background: rgba(255,255,255,0.02);
+        }
+        .btn-secondary:hover {
+            color: var(--text); border-color: var(--border-light);
+            background: rgba(255,255,255,0.04);
         }
 
-        .btn-secondary:hover { color: var(--text); border-color: #333; background: rgba(255,255,255,0.03); }
-
-        .app-store-badge {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
-            color: #34d399; margin-top: 1.25rem; letter-spacing: 0.03em;
-            position: relative; display: flex; align-items: center; gap: 0.5rem;
+        /* Phone mockup */
+        .phone-mockup-wrapper {
+            margin-top: 4rem; position: relative;
         }
 
-        .app-store-badge .dot {
-            width: 6px; height: 6px; background: #34d399; border-radius: 50%;
-            animation: blink 2s ease-in-out infinite;
+        .phone-mockup {
+            width: 280px; position: relative;
+            border-radius: 36px; overflow: hidden;
+            border: 3px solid #2a2a33;
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.05),
+                0 25px 80px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(194, 113, 133, 0.08);
+            background: #000;
+            animation: phoneFloat 5s ease-in-out infinite;
         }
 
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes phoneFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
 
-        /* Section base */
-        section { padding: 7rem 2rem; }
+        .phone-mockup img {
+            width: 100%; height: auto; display: block;
+        }
+
+        .phone-mockup .notch {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 120px; height: 28px;
+            background: #000; border-radius: 0 0 18px 18px; z-index: 2;
+        }
+
+        /* ---- SOCIAL PROOF BAR ---- */
+        .social-proof {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex; justify-content: center; align-items: center;
+            gap: 3rem; flex-wrap: wrap;
+            background: rgba(255,255,255,0.01);
+        }
+
+        .proof-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            font-size: 0.82rem; color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .proof-icon {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: var(--surface-2); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary);
+        }
+
+        /* ---- SECTIONS BASE ---- */
+        section { padding: 8rem 2rem; }
         .section-container { max-width: 1100px; margin: 0 auto; }
 
         .section-label {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
-            color: var(--rose); letter-spacing: 0.1em; text-transform: uppercase;
-            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+            color: var(--rose); letter-spacing: 0.12em; text-transform: uppercase;
+            margin-bottom: 1rem; font-weight: 500;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
-            letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.15;
+            font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 800;
+            letter-spacing: -0.035em; margin-bottom: 1rem; line-height: 1.12;
         }
 
         .section-subtitle {
             font-size: 1.05rem; color: var(--text-muted); max-width: 540px;
-            font-weight: 300; line-height: 1.7;
+            font-weight: 300; line-height: 1.75;
         }
 
-        /* Screenshots showcase */
+        /* ---- SCREENSHOTS ---- */
         #screenshots { border-top: 1px solid var(--border); }
 
         .screenshots-scroll {
             margin-top: 4rem;
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding-bottom: 1.5rem;
+            display: flex; gap: 1.75rem;
+            overflow-x: auto; padding-bottom: 2rem;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
-
         .screenshots-scroll::-webkit-scrollbar { display: none; }
 
         .screenshot-item {
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            width: 280px;
-            border-radius: 20px;
+            flex-shrink: 0; scroll-snap-align: center;
+            width: 300px; border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--border);
             background: var(--surface);
-            transition: transform 0.3s, border-color 0.3s;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s, box-shadow 0.3s;
         }
-
         .screenshot-item:hover {
-            transform: translateY(-4px);
+            transform: translateY(-6px) perspective(800px) rotateY(-2deg) rotateX(1deg);
             border-color: rgba(194, 113, 133, 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 30px rgba(194, 113, 133, 0.06);
         }
+        .screenshot-item img { width: 100%; height: auto; display: block; }
 
-        .screenshot-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Features */
+        /* ---- FEATURES BENTO GRID ---- */
         #features { border-top: 1px solid var(--border); }
 
         .features-grid {
             display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem; margin-top: 4rem;
+            gap: 1.25rem; margin-top: 4rem;
         }
 
         .feature-card {
-            border: 1px solid var(--border); border-radius: 16px;
-            padding: 2.25rem; background: var(--surface);
-            transition: all 0.3s; position: relative; overflow: hidden;
+            border-radius: 20px; padding: 2.5rem;
+            background: var(--surface);
+            position: relative; overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid transparent;
+            /* Gradient border trick using background-clip */
         }
 
         .feature-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0), transparent);
-            transition: background 0.3s;
+            content: ''; position: absolute; inset: 0;
+            border-radius: 20px; padding: 1px;
+            background: linear-gradient(135deg, rgba(194, 113, 133, 0.08), rgba(194, 113, 133, 0) 50%, rgba(194, 113, 133, 0.04));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            transition: background 0.4s;
         }
 
         .feature-card:hover::before {
-            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.5), transparent);
+            background: linear-gradient(135deg, rgba(194, 113, 133, 0.3), rgba(194, 113, 133, 0.05) 50%, rgba(194, 113, 133, 0.15));
         }
 
-        .feature-card:hover { border-color: rgba(194, 113, 133, 0.15); background: #15151a; }
+        .feature-card:hover {
+            background: var(--surface-2);
+            box-shadow: 0 0 40px rgba(194, 113, 133, 0.05);
+            transform: translateY(-2px);
+        }
 
         .feature-icon {
-            width: 44px; height: 44px; border-radius: 12px;
-            background: var(--rose-dim); display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.25rem; color: var(--rose);
+            width: 48px; height: 48px; border-radius: 14px;
+            background: linear-gradient(135deg, var(--rose-dim), rgba(194, 113, 133, 0.15));
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem; color: var(--rose);
         }
 
-        .feature-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.65rem; }
-        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; font-weight: 300; }
+        .feature-card h3 {
+            font-size: 1.15rem; font-weight: 700; margin-bottom: 0.7rem;
+            letter-spacing: -0.01em;
+        }
+        .feature-card p {
+            color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; font-weight: 300;
+        }
 
-        /* How it works */
+        /* ---- HOW IT WORKS ---- */
         #how-it-works { border-top: 1px solid var(--border); }
 
-        .steps {
-            margin-top: 4rem; display: flex; flex-direction: column;
+        .steps-horizontal {
+            margin-top: 4rem;
+            display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 0; position: relative;
         }
 
-        .steps::before {
-            content: ''; position: absolute; left: 23px; top: 0; bottom: 0;
-            width: 1px; background: linear-gradient(to bottom, var(--rose), var(--border));
+        .steps-horizontal::before {
+            content: ''; position: absolute;
+            top: 28px; left: calc(16.66% + 24px); right: calc(16.66% + 24px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--rose), var(--border-light), var(--rose));
+            opacity: 0.5;
         }
 
-        .step { display: flex; gap: 2rem; align-items: flex-start; padding: 2rem 0; }
+        .step-h {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; padding: 0 1.5rem; position: relative;
+        }
 
         .step-num {
-            width: 48px; height: 48px; border-radius: 50%;
-            background: var(--surface); border: 1px solid var(--border);
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--surface); border: 2px solid var(--border-light);
             display: flex; align-items: center; justify-content: center;
-            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;
             color: var(--rose); flex-shrink: 0; position: relative; z-index: 1;
+            margin-bottom: 1.75rem;
+            transition: all 0.3s;
         }
 
-        .step-content h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem; }
-        .step-content p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; font-weight: 300; max-width: 450px; }
-
-        /* CTA */
-        #cta { border-top: 1px solid var(--border); text-align: center; }
-
-        .cta-box {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 20px; padding: 4rem 2rem; margin-top: 3rem;
-            position: relative; overflow: hidden;
+        .step-h:hover .step-num {
+            border-color: var(--rose);
+            box-shadow: 0 0 25px rgba(194, 113, 133, 0.15);
         }
 
-        .cta-box::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        .step-h h3 {
+            font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .step-h p {
+            color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;
+            font-weight: 300; max-width: 300px;
         }
 
-        .cta-box h3 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+        /* ---- FAQ ---- */
+        #faq { border-top: 1px solid var(--border); }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border); padding: 2rem;
+        .faq-list {
+            margin-top: 4rem; max-width: 720px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%; background: none; border: none;
+            color: var(--text); font-family: inherit;
+            font-size: 1rem; font-weight: 600; text-align: left;
+            padding: 1.5rem 0; cursor: pointer;
             display: flex; justify-content: space-between; align-items: center;
-            font-size: 0.8rem; color: var(--text-muted);
+            gap: 1rem; line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .faq-question:hover { color: var(--rose-light); }
+
+        .faq-chevron {
+            flex-shrink: 0; width: 20px; height: 20px;
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
         }
 
-        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: var(--text); }
-        .footer-links { display: flex; gap: 1.5rem; }
+        .faq-item.active .faq-chevron { transform: rotate(180deg); }
 
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px; opacity: 1;
+        }
+
+        .faq-answer p {
+            color: var(--text-muted); font-size: 0.92rem; line-height: 1.75;
+            font-weight: 300; padding-bottom: 1.5rem;
+        }
+
+        /* ---- CTA ---- */
+        #cta {
+            padding: 8rem 2rem; position: relative; overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute; inset: 0; z-index: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(194, 113, 133, 0.1) 0%, transparent 60%),
+                linear-gradient(180deg, var(--bg) 0%, rgba(15, 10, 12, 1) 50%, var(--bg) 100%);
+        }
+
+        .cta-card {
+            position: relative; z-index: 1;
+            max-width: 680px; margin: 0 auto;
+            text-align: center;
+            background: rgba(17, 17, 20, 0.6);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(194, 113, 133, 0.15);
+            border-radius: 28px; padding: 5rem 3rem;
+            box-shadow: 0 0 80px rgba(194, 113, 133, 0.06), 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        .cta-card h3 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;
+            margin-bottom: 0.75rem; letter-spacing: -0.03em;
+        }
+        .cta-card p {
+            color: var(--text-muted); margin-bottom: 2.5rem;
+            font-weight: 300; font-size: 1.05rem; line-height: 1.7;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2.5rem;
+        }
+
+        .footer-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted); font-size: 0.85rem;
+            line-height: 1.7; margin-top: 1rem; max-width: 280px;
+            font-weight: 300;
+        }
+
+        .footer-col h4 {
+            font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col a {
+            display: block; color: var(--text-muted); text-decoration: none;
+            font-size: 0.88rem; padding: 0.3rem 0;
+            transition: color 0.2s; font-weight: 400;
+        }
+        .footer-col a:hover { color: var(--text); }
+
+        .footer-bottom {
+            max-width: 1100px; margin: 0 auto;
+            padding-top: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.78rem; color: var(--text-muted);
+        }
+        .footer-bottom a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .footer-bottom a:hover { color: var(--text); }
+
+        /* ---- RESPONSIVE ---- */
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.25rem; }
-            .features-grid { grid-template-columns: 1fr; }
+            nav { padding: 0 1.25rem; height: 56px; }
+            .nav-links { display: none; }
             section { padding: 5rem 1.25rem; }
-            .screenshot-item { width: 240px; }
-            .step { gap: 1.25rem; }
-            footer { flex-direction: column; gap: 1rem; text-align: center; }
+            .hero { padding: 7rem 1.25rem 3rem; }
+            .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+            .phone-mockup { width: 220px; }
+            .social-proof { gap: 1.5rem; padding: 1.25rem; }
+            .proof-item { font-size: 0.75rem; }
+            .proof-icon { width: 28px; height: 28px; border-radius: 6px; }
+            .screenshot-item { width: 260px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .feature-card { padding: 2rem; }
+            .steps-horizontal {
+                grid-template-columns: 1fr; gap: 0;
+            }
+            .steps-horizontal::before {
+                top: 0; bottom: 0; left: 28px; right: auto;
+                width: 2px; height: auto;
+            }
+            .step-h {
+                flex-direction: row; text-align: left;
+                align-items: flex-start; padding: 1.5rem 0;
+                gap: 1.5rem;
+            }
+            .step-num { margin-bottom: 0; flex-shrink: 0; }
+            .cta-card { padding: 3rem 1.5rem; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .footer-brand { grid-column: 1 / -1; }
+            .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
         }
 
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        @media (max-width: 480px) {
+            .social-proof { flex-direction: column; gap: 1rem; }
+        }
+
+        /* ---- ANIMATIONS ---- */
+        .fade-in {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Staggered feature cards */
+        .feature-card.fade-in:nth-child(1) { transition-delay: 0s; }
+        .feature-card.fade-in:nth-child(2) { transition-delay: 0.1s; }
+        .feature-card.fade-in:nth-child(3) { transition-delay: 0.2s; }
+        .feature-card.fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+        /* Staggered steps */
+        .step-h.fade-in:nth-child(1) { transition-delay: 0s; }
+        .step-h.fade-in:nth-child(2) { transition-delay: 0.15s; }
+        .step-h.fade-in:nth-child(3) { transition-delay: 0.3s; }
     </style>
 </head>
 <body>
@@ -449,9 +713,16 @@
     <header>
     <nav>
         <div class="nav-left">
-            <a href="/" class="logo">triply</a>
-            <a href="/destinations" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color 0.2s;">Destinations</a>
-            <a href="/blog" style="font-size:0.85rem;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color 0.2s;">Blog</a>
+            <a href="/" class="logo">
+                <span class="logo-icon">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </span>
+                triply
+            </a>
+            <div class="nav-links">
+                <a href="/destinations">Destinations</a>
+                <a href="/blog">Blog</a>
+            </div>
         </div>
         <a href="https://link.triply.au/website" class="nav-cta">Get on App Store</a>
     </nav>
@@ -459,35 +730,56 @@
 
     <main>
     <section class="hero">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
+        <div class="hero-bg"></div>
 
-        <div class="app-icon-hero">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--rose)" stroke="none"><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </div>
+        <div class="hero-content">
+            <h1 class="hero-anim hero-anim-2">
+                Turn Reels into<br>
+                <span class="gradient-text">bucket lists.</span>
+            </h1>
+            <p class="hero-sub hero-anim hero-anim-3">Share an Instagram Reel. Triply extracts every place, puts them on a map, and organizes your dream trips — powered by AI.</p>
 
-        <h1>
-            Turn Reels into<br>
-            <span class="rose-text">bucket lists.</span>
-        </h1>
-        <p class="hero-sub">Share an Instagram Reel. Triply extracts every place, puts them on a map, and organizes your dream trips — powered by AI.</p>
+            <div class="hero-actions hero-anim hero-anim-4">
+                <a href="https://link.triply.au/website" class="btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    Get on the App Store
+                </a>
+                <a href="#how-it-works" class="btn-secondary">
+                    How it works
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                </a>
+            </div>
 
-        <div class="hero-actions">
-            <a href="https://link.triply.au/website" class="btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                Get on the App Store
-            </a>
-            <a href="#how-it-works" class="btn-secondary">
-                How it works
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-            </a>
-        </div>
-
-        <div class="app-store-badge">
-            <span class="dot"></span>
-            Free on iOS
+            <div class="phone-mockup-wrapper hero-anim hero-anim-5">
+                <div class="phone-mockup">
+                    <div class="notch"></div>
+                    <img src="/assets/1.png" alt="Triply app - Turn Reels into travel bucket lists">
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof">
+        <div class="proof-item">
+            <div class="proof-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </div>
+            Featured on Hacker News
+        </div>
+        <div class="proof-item">
+            <div class="proof-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </div>
+            Free on iOS
+        </div>
+        <div class="proof-item">
+            <div class="proof-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            50+ countries supported
+        </div>
+    </div>
 
     <section id="screenshots">
         <div class="section-container">
@@ -521,28 +813,28 @@
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
                     </div>
                     <h3>Reel to Bucket List</h3>
                     <p>Paste an Instagram Reel URL or share directly from Instagram. Triply watches it and extracts every travel destination mentioned.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
                     <h3>Every Place, One Map</h3>
                     <p>All extracted locations plotted on an interactive map. See the full picture of every destination from a single reel at a glance.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
                     </div>
                     <h3>Collections</h3>
                     <p>Organize your saved places into collections — by trip, by vibe, by dream. Your own travel library, always growing.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                     </div>
                     <h3>AI-Powered Extraction</h3>
                     <p>Powered by AI that understands context — not just place names, but the actual locations shown in the video content.</p>
@@ -556,24 +848,24 @@
             <div class="section-label fade-in">How it works</div>
             <h2 class="section-title fade-in">Three steps. That's it.</h2>
 
-            <div class="steps">
-                <div class="step fade-in">
+            <div class="steps-horizontal">
+                <div class="step-h fade-in">
                     <div class="step-num">01</div>
-                    <div class="step-content">
+                    <div>
                         <h3>Share a Reel</h3>
                         <p>See a travel reel you love? Hit share and send it to Triply, or paste the URL directly in the app.</p>
                     </div>
                 </div>
-                <div class="step fade-in">
+                <div class="step-h fade-in">
                     <div class="step-num">02</div>
-                    <div class="step-content">
+                    <div>
                         <h3>Triply extracts every place</h3>
                         <p>AI identifies all locations in the reel and pins them on your map. Each place gets its own card with details.</p>
                     </div>
                 </div>
-                <div class="step fade-in">
+                <div class="step-h fade-in">
                     <div class="step-num">03</div>
-                    <div class="step-content">
+                    <div>
                         <h3>Save, organize, explore</h3>
                         <p>Add places to your bucket list, create collections, and start planning. Your travel inspiration — finally organized.</p>
                     </div>
@@ -582,9 +874,74 @@
         </div>
     </section>
 
-    <section id="cta">
+    <section id="faq">
         <div class="section-container">
-            <div class="cta-box fade-in">
+            <div class="section-label fade-in">FAQ</div>
+            <h2 class="section-title fade-in">Common questions.</h2>
+
+            <div class="faq-list">
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        What app turns Instagram Reels into travel plans?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Triply is an AI-powered iOS app that extracts travel destinations from Instagram Reels and organizes them into mapped bucket lists. Share a reel, and Triply identifies every place mentioned — restaurants, landmarks, beaches, neighborhoods — and pins them on an interactive map.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        How does Triply work?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Share an Instagram Reel to Triply or paste the URL. Triply's AI analyzes the video content and extracts every travel destination mentioned or shown. All places appear on an interactive map with detail cards. Save them to your bucket list and organize into collections by trip, region, or vibe.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        Is Triply free?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Triply is available now on the App Store. Download it free on iOS.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        Do I need an Instagram account to use Triply?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Triply works with public Reel URLs — no Instagram login is required. Simply paste the link to any public travel reel.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        What is the best app to save travel places from Instagram Reels?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Triply is purpose-built for saving travel places from Instagram Reels. Unlike manually saving reels or using Google Maps, Triply automatically extracts every destination from a reel using AI, maps them, and lets you organize them into collections — all in seconds.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <button class="faq-question" aria-expanded="false">
+                        What kind of reels work with Triply?
+                        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Triply works with any Instagram Reel featuring travel content — city guides, food tours, hidden gems, road trip itineraries, hotel reviews, beach roundups, restaurant recommendations, walking tours, and more. The AI understands context, not just keywords.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="cta-bg"></div>
+        <div class="section-container" style="position: relative; z-index: 1;">
+            <div class="cta-card fade-in">
                 <h3>Stop losing travel inspo.</h3>
                 <p>Every reel you save and forget is a trip you'll never take. Triply changes that.</p>
                 <a href="https://link.triply.au/website" class="btn-primary">
@@ -597,23 +954,71 @@
     </main>
 
     <footer>
-        <span>&copy; 2026 <a href="/">triply.au</a></span>
-        <div class="footer-links">
-            <a href="/destinations">Destinations</a>
-            <a href="/blog">Blog</a>
-            <a href="/policy">Privacy</a>
-            <a href="/terms">Terms</a>
-            <a href="mailto:connect@aucto.ai">Contact</a>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo" style="margin-bottom: 0.5rem;">
+                    <span class="logo-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </span>
+                    triply
+                </a>
+                <p>Turn the travel content you already watch into trips you actually take. AI-powered place extraction from Instagram Reels.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/#features">Features</a>
+                <a href="/destinations">Destinations</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/policy">Privacy</a>
+                <a href="/terms">Terms</a>
+                <a href="mailto:connect@aucto.ai">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="https://instagram.com/triply.au" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://twitter.com/triplyau" target="_blank" rel="noopener">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 <a href="/">triply.au</a></span>
+            <span>Made by <a href="https://triply.au">Aucto AI</a></span>
         </div>
     </footer>
 
     <script>
+        // Intersection Observer for fade-in animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked (if it wasn't already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
     </script>
 
 </body>
