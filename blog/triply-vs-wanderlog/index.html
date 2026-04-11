@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Triply vs Wanderlog: Which Travel App Actually Saves You Time?</title>
+    <meta name="description" content="An honest comparison of Triply and Wanderlog for travel planning. Wanderlog excels at itinerary building, but Triply captures places from Instagram Reels automatically. Here's when to use each.">
+    <link rel="canonical" href="https://triply.au/blog/triply-vs-wanderlog">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Triply vs Wanderlog: Which Travel App Actually Saves You Time?">
+    <meta property="og:description" content="An honest comparison of Triply and Wanderlog for travel planning.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/triply-vs-wanderlog">
+    <meta property="og:image" content="https://triply.au/assets/og-triply.png">
+    <meta property="article:published_time" content="2026-04-11">
+    <meta property="article:author" content="https://triply.au">
+    <meta property="article:section" content="Travel">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Triply vs Wanderlog: Which Travel App Actually Saves You Time?">
+    <meta name="twitter:description" content="An honest comparison of Triply and Wanderlog for travel planning.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-triply.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Triply vs Wanderlog", "item": "https://triply.au/blog/triply-vs-wanderlog" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Triply vs Wanderlog: Which Travel App Actually Saves You Time?",
+      "description": "An honest comparison of Triply and Wanderlog for travel planning. Wanderlog excels at itinerary building, but Triply captures places from Instagram Reels automatically.",
+      "datePublished": "2026-04-11",
+      "dateModified": "2026-04-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Triply",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/triply-vs-wanderlog",
+      "image": "https://triply.au/assets/og-triply.png"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Wanderlog or Triply better for planning a trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the stage of planning. Triply is better for the discovery phase — capturing places from Instagram Reels automatically. Wanderlog is better for the itinerary-building phase — scheduling activities, booking hotels, and collaborating with travel partners. Many people use both."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Triply replace Wanderlog?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not entirely. Triply focuses on extracting and saving places from social media content, while Wanderlog focuses on building detailed day-by-day itineraries. They serve different stages of the travel planning process and work well together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Wanderlog extract places from Instagram Reels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Wanderlog requires you to manually search for and add places to your trip. Triply uses AI to automatically extract place names from Instagram Reels and map them for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Triply free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Triply is free to download and use on iOS. You can extract places from Instagram Reels, organize them into collections, and view them on a map at no cost."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            margin: 2rem 0; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; font-size: 0.9rem;
+        }
+        .comparison-table th {
+            padding: 1rem 1.25rem; text-align: left;
+            font-weight: 600; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(194, 113, 133, 0.05);
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #c8c8cd; font-weight: 300;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .feature-name { color: var(--text); font-weight: 500; }
+        .check { color: #34d399; }
+        .cross { color: #f87171; }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.85rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">triply</a>
+        </div>
+        <a href="https://link.triply.au/website" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Triply</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>Triply vs Wanderlog</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Comparison</div>
+            <h1>Triply vs Wanderlog: Which Travel App Actually <span class="rose-text">Saves You Time</span>?</h1>
+            <div class="article-meta">Apr 11, 2026 &middot; 7 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>Wanderlog and Triply both show up when you search for travel planning apps. They both have maps. They both let you save places. But they solve fundamentally different problems, and if you pick the wrong one for what you actually need, you're going to be frustrated.</p>
+
+            <p>I've spent serious time with both, and here's the thing -- they're not really competitors. They're more like two different chapters of the same trip. But the differences matter, so let me break it down.</p>
+
+            <h2>The Quick Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Triply</th>
+                        <th>Wanderlog</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Extract places from Instagram Reels</td>
+                        <td><span class="check">Yes -- AI-powered, automatic</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Day-by-day itinerary builder</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- detailed scheduling</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Collaborative trip planning</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- real-time collaboration</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Budget tracking</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Hotel/flight booking links</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI place extraction from social media</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Map visualization</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="check">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Save from social media with one tap</td>
+                        <td><span class="check">Yes -- share sheet integration</span></td>
+                        <td><span class="cross">Manual search required</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Price</td>
+                        <td>Free</td>
+                        <td>Free (Pro plan available)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Platform</td>
+                        <td>iOS</td>
+                        <td>iOS, Android, Web</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>See what I mean? These apps barely overlap. Wanderlog is an itinerary planner. Triply is a place-capture tool. The table tells that story pretty clearly, but the details make it even more obvious.</p>
+
+            <h2>Where Wanderlog Wins</h2>
+
+            <h3>Itinerary Building Is Its Superpower</h3>
+
+            <p>If you're the kind of person who plans trips day by day -- breakfast here, museum at 10am, lunch at that spot from the food blog, walk to the park in the afternoon -- Wanderlog is genuinely excellent at this. You can drag and drop activities, see them on a map, optimize your route so you're not zigzagging across a city. It's what a trip planner should feel like.</p>
+
+            <p>Triply doesn't do this at all. It's not trying to. There's no day-by-day view, no scheduling, no route optimization. If you need a detailed itinerary, Wanderlog is the clear winner.</p>
+
+            <h3>Collaborative Planning</h3>
+
+            <p>Planning a trip with friends? Wanderlog lets multiple people edit the same trip in real time. Add places, vote on restaurants, split the budget. It's like Google Docs for travel. This is a huge deal if you're coordinating a group trip and everyone has opinions (which, let's be honest, they always do).</p>
+
+            <p>Triply is a solo experience right now. You're building your own bucket list, your own collections. Great for personal discovery, not built for group coordination.</p>
+
+            <h3>Budget Tracking</h3>
+
+            <p>Wanderlog lets you track expenses, set budgets for different categories, and keep a running total of what your trip is costing. For backpackers and budget-conscious travelers, this is genuinely useful. You can see exactly where your money is going before you've even left.</p>
+
+            <h3>Multi-Platform Availability</h3>
+
+            <p>Wanderlog works on iOS, Android, and the web. You can plan on your laptop and check the itinerary on your phone while you're walking around Tokyo. Triply is iOS-only right now, which is a real limitation if you're on Android or prefer planning on a bigger screen.</p>
+
+            <h2>Where Triply Wins</h2>
+
+            <h3>The Discovery-to-Save Pipeline</h3>
+
+            <p>Here's where the fundamental difference shows up. Wanderlog assumes you already know where you want to go. You open the app, search for "best cafes in Lisbon," and add them to your trip. That works fine if you're the type to read travel blogs and guidebooks.</p>
+
+            <p>But most of us don't discover places that way anymore. We find them on Instagram. We see a reel of someone eating the most incredible-looking pasta in Rome and think "I need to go there." The problem is, the reel doesn't give you a Google Maps pin. The creator might mumble the name. It might flash on screen for a second and a half.</p>
+
+            <p>With <a href="/">Triply</a>, you share that reel and the AI extracts every place mentioned -- the restaurant, the piazza it's near, the gelato shop the creator walked past. All of them, mapped and ready to save. With Wanderlog, you'd need to rewatch the reel, try to catch the names, search for each one manually, and add them one by one.</p>
+
+            <p>For one reel, that's mildly annoying. For the 50+ travel reels you save in a month? It's a dealbreaker.</p>
+
+            <h3>Zero-Effort Place Capture</h3>
+
+            <p>The entire point of Triply is that you don't have to do the work. You share a reel. The AI figures out the places. You tap to save them. That's it. There's no typing, no searching, no "wait, was that restaurant called Trattoria da Mario or Trattoria di Mario?"</p>
+
+            <p>Wanderlog requires manual input for everything. Every place, every address, every detail -- you're typing it in or searching for it. That's fine for a planned trip where you've done your research. It's terrible for the casual, ongoing process of "I saw something cool, I want to remember it."</p>
+
+            <h3>Built for the Way You Actually Find Places</h3>
+
+            <p>There's a gap between "I saw a cool place on Instagram" and "that place is in my trip plan." Wanderlog bridges the second half of that gap (place to itinerary). Triply bridges the first half (content to place). And honestly, the first half is the part where most people drop off. You see the reel, you save it in Instagram, and then it rots in your saved folder forever. Triply fixes that.</p>
+
+            <h2>The Real Question: Discovery vs. Planning</h2>
+
+            <p>This whole comparison boils down to one question: <strong>what stage of travel planning are you in?</strong></p>
+
+            <ul>
+                <li><strong>Discovery stage:</strong> You're scrolling, finding cool places, building a wishlist. This is Triply territory. It's designed for passive, effortless capture of places you encounter in your feed.</li>
+                <li><strong>Planning stage:</strong> You know where you're going. You need to build an itinerary, book hotels, coordinate with friends, figure out the budget. This is Wanderlog territory.</li>
+            </ul>
+
+            <p>The mistake people make is using a planning tool for discovery (too much friction) or a discovery tool for planning (not enough features). They're different jobs.</p>
+
+            <h2>How They Work Together</h2>
+
+            <p>Here's what I actually do, and I think it's the best approach:</p>
+
+            <ol>
+                <li><strong>Ongoing:</strong> Every time I see a travel reel I like, I share it to Triply. Takes two seconds. The places get extracted and saved into collections -- "Japan," "Portugal," "Someday Maybe."</li>
+                <li><strong>When I decide to take a trip:</strong> I open my Triply collection for that destination. I've got weeks or months of curated, reel-sourced places already there.</li>
+                <li><strong>Itinerary time:</strong> I pull my favorites from Triply into Wanderlog and build the actual day-by-day plan. Route optimization, scheduling, budget -- all of that happens in Wanderlog.</li>
+            </ol>
+
+            <p>Triply is the funnel. Wanderlog is the organizer. Together, they cover the full journey from "that looks cool" to "we're going on Tuesday at 2pm."</p>
+
+            <div class="callout">
+                <p><strong>My honest take:</strong> Wanderlog is a more full-featured app overall. It does more things. But Triply solves a problem that Wanderlog doesn't even acknowledge -- the gap between seeing a place on Instagram and having it in your travel plans. If you're someone who discovers places through Reels (and in 2026, who isn't?), you need something to bridge that gap. Triply does it better than anything else I've used.</p>
+            </div>
+
+            <h2>When Wanderlog Is All You Need</h2>
+
+            <p>Stick with just Wanderlog if:</p>
+
+            <ul>
+                <li>You discover places through travel blogs, guidebooks, or Google searches rather than social media</li>
+                <li>You're planning a specific trip and need a full itinerary with scheduling</li>
+                <li>You're coordinating with travel partners and need real-time collaboration</li>
+                <li>You want budget tracking built into your planning tool</li>
+                <li>You're on Android</li>
+            </ul>
+
+            <h2>When You Need Triply</h2>
+
+            <p><a href="/">Triply</a> makes more sense if:</p>
+
+            <ul>
+                <li>You discover most of your travel ideas through Instagram Reels</li>
+                <li>You save dozens of travel reels but never actually extract the places</li>
+                <li>You want a passive, zero-effort way to build a travel bucket list over time</li>
+                <li>You're in the "dreaming and collecting" phase, not the "planning and booking" phase</li>
+                <li>You're tired of losing places because they're buried in your Instagram saved folder</li>
+            </ul>
+
+            <h2>The Verdict</h2>
+
+            <p><strong>Wanderlog is the better itinerary planner.</strong> There's no question about that. If you need to build a detailed, day-by-day schedule for your next trip, Wanderlog does it really well.</p>
+
+            <p><strong>Triply is the better capture tool.</strong> If you need to turn Instagram Reels into saved, mapped, organized places without doing any manual work, Triply is the only app that does this properly.</p>
+
+            <p>They're not competitors. They're different stages of the same trip. And the smartest move is probably to use both -- Triply for the discovering and collecting, Wanderlog for the planning and scheduling. Your future traveling self will thank you for it.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>Stop losing places from Reels.</h3>
+            <p>Triply extracts places from Instagram Reels automatically -- so you can actually visit them.</p>
+            <a href="https://link.triply.au/website" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Triply
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/triply-vs-google-maps" class="related-link">
+                    Triply vs Google Maps: Which Is Better for Travel Bucket Lists?
+                    <span>How Triply compares to the world's most popular map app.</span>
+                </a>
+                <a href="/blog/triply-vs-instagram-saved" class="related-link">
+                    Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough
+                    <span>Why bookmarking Reels doesn't actually help you travel.</span>
+                </a>
+                <a href="/blog/triply-vs-notion-travel" class="related-link">
+                    Triply vs Notion for Travel Planning: Which Should You Use?
+                    <span>Comparing automated capture to manual databases.</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

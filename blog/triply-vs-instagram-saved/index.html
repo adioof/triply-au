@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough</title>
+    <meta name="description" content="Instagram's saved collections are just bookmarks — no place names, no map, no organization. Here's why Triply's AI-powered place extraction actually turns your saved Reels into travel plans.">
+    <link rel="canonical" href="https://triply.au/blog/triply-vs-instagram-saved">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough">
+    <meta property="og:description" content="Instagram's saved collections are just bookmarks. Triply actually extracts the places.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/triply-vs-instagram-saved">
+    <meta property="og:image" content="https://triply.au/assets/og-triply.png">
+    <meta property="article:published_time" content="2026-04-11">
+    <meta property="article:author" content="https://triply.au">
+    <meta property="article:section" content="Travel">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough">
+    <meta name="twitter:description" content="Instagram's saved collections are just bookmarks. Triply actually extracts the places.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-triply.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Triply vs Instagram Saved", "item": "https://triply.au/blog/triply-vs-instagram-saved" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough",
+      "description": "Instagram's saved collections are just bookmarks — no place names, no map, no organization. Here's why Triply's AI-powered place extraction actually turns saved Reels into travel plans.",
+      "datePublished": "2026-04-11",
+      "dateModified": "2026-04-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Triply",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/triply-vs-instagram-saved",
+      "image": "https://triply.au/assets/og-triply.png"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I organize saved Reels by destination on Instagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instagram lets you create named collections for saved posts and Reels, but there's no map view, no automatic place extraction, and no way to see which places are mentioned in each Reel without rewatching them manually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Triply extract places from Instagram Reels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Triply uses AI to analyze the audio, on-screen text, captions, and visual context of an Instagram Reel. It identifies place names mentioned or shown, matches them to real locations, and displays them on a map — all automatically when you share a Reel to the app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Instagram's save feature good enough for travel planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instagram's save feature works as a basic bookmark, but it doesn't extract place names, show locations on a map, or help you organize by destination. For casual saving it's fine, but for actually using those Reels to plan trips, you'll need a dedicated tool like Triply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Triply work with Reels I've already saved on Instagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can go to any Reel in your Instagram saved folder, tap the share button, and share it to Triply. The app will extract the places from that Reel just like it would with any new Reel you encounter."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            margin: 2rem 0; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; font-size: 0.9rem;
+        }
+        .comparison-table th {
+            padding: 1rem 1.25rem; text-align: left;
+            font-weight: 600; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(194, 113, 133, 0.05);
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #c8c8cd; font-weight: 300;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .feature-name { color: var(--text); font-weight: 500; }
+        .check { color: #34d399; }
+        .cross { color: #f87171; }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.85rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">triply</a>
+        </div>
+        <a href="https://link.triply.au/website" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Triply</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>Triply vs Instagram Saved</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Comparison</div>
+            <h1>Triply vs Instagram Saved Collections: Why <span class="rose-text">Saving Reels Isn't Enough</span></h1>
+            <div class="article-meta">Apr 11, 2026 &middot; 7 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>You've done it a thousand times. You're scrolling through Instagram, you see a gorgeous reel of someone cliff-jumping in Bali or eating their way through a Tokyo alley, and you hit that little bookmark icon. Saved. Done. You'll come back to it later.</p>
+
+            <p>Except you won't. You know you won't. I know I won't. That reel is going to sit in your saved folder alongside 300 other reels you saved with the best of intentions and never looked at again.</p>
+
+            <p>The problem isn't that you're lazy. The problem is that Instagram's save feature is a bookmark, not a tool. It remembers that you liked a video. It doesn't know what places were in it. It doesn't put them on a map. It doesn't help you plan anything. It just... keeps the video in a list.</p>
+
+            <p>So let's talk about what you're actually getting with Instagram Saved vs. what <a href="/">Triply</a> does differently.</p>
+
+            <h2>The Quick Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Triply</th>
+                        <th>Instagram Saved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Extracts place names from Reels</td>
+                        <td><span class="check">Yes -- AI-powered, automatic</span></td>
+                        <td><span class="cross">No -- just saves the video</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Shows places on a map</td>
+                        <td><span class="check">Yes -- interactive map</span></td>
+                        <td><span class="cross">No map at all</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Organized by destination</td>
+                        <td><span class="check">Yes -- custom collections</span></td>
+                        <td><span class="check">Basic folders (manual)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Search saved places by name</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="cross">No -- search by reel content only</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Links back to original Reel</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="check">Yes (it IS the reel)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Works if creator deletes the Reel</td>
+                        <td><span class="check">Yes -- places are already extracted</span></td>
+                        <td><span class="cross">No -- saved reel disappears</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Handles Reels with multiple places</td>
+                        <td><span class="check">Yes -- extracts all places</span></td>
+                        <td><span class="cross">No -- one bookmark for entire reel</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Price</td>
+                        <td>Free</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Platform</td>
+                        <td>iOS</td>
+                        <td>iOS, Android, Web</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>When you see it laid out like this, it becomes obvious that these aren't really comparable tools. Instagram Saved is a video bookmark. Triply is a place extraction engine. But let me get into why those differences matter so much in practice.</p>
+
+            <h2>The Problem with Instagram Saved Collections</h2>
+
+            <h3>You're Saving Videos, Not Places</h3>
+
+            <p>This is the core issue and it's worth really sitting with. When you save a reel on Instagram, you're saving a video. That video might mention 12 different restaurants, three neighborhoods, a hotel, and a beach. But all Instagram knows is "user bookmarked this video." That's it.</p>
+
+            <p>There's no extraction. No parsing. No understanding of what's actually in the content. The places inside that reel are locked behind a 30-second video that you'll need to rewatch, pause, screenshot, and manually research to get anything useful out of.</p>
+
+            <p>I did the math once on my own saved folder. I had about 150 travel reels saved. Each one mentioned an average of maybe 4-5 places. That's potentially 600+ places trapped inside videos that I'd have to individually rewatch to extract. I did that for approximately zero of them.</p>
+
+            <h3>There's No Map</h3>
+
+            <p>Instagram Saved is a grid of thumbnails. That's the interface. You're looking at a wall of tiny video previews with no geographic context at all. Want to know which of your saved reels are about Tokyo? You'll need to remember, or scroll through and check each one.</p>
+
+            <p>You can't see your saved places on a map because Instagram doesn't know they're places. It doesn't know they're anything. It's just holding videos for you, like a filing cabinet that you never labeled.</p>
+
+            <h3>No Search by Place Name</h3>
+
+            <p>Saved a reel about an amazing cafe in Melbourne six months ago? Good luck finding it. You can't search your saved reels by place name because Instagram doesn't index place names from reel content. You'd have to scroll through your entire saved collection, looking at thumbnails, trying to remember which video had that cafe in it.</p>
+
+            <p>This is the moment where saving reels stops being useful. It only works if you act on it immediately. Once it's buried in a folder with 200 other saves, it's basically gone.</p>
+
+            <h3>Creators Delete Reels</h3>
+
+            <p>Here's one that catches people off guard. If a creator deletes or archives a reel you saved, it just disappears from your saved folder. Silently. No notification. The place information that was in that video? Gone forever, because it only ever existed inside the video itself.</p>
+
+            <p>I've gone back to saved reels months later and found dead links where travel recommendations used to be. There's nothing more frustrating than knowing you saved something useful and having it just not be there anymore.</p>
+
+            <h3>One Bookmark Per Reel (Even If It Has 15 Places)</h3>
+
+            <p>"Top 15 Restaurants in Paris" is one reel but fifteen places. Instagram treats it as one bookmark. If you want to remember restaurant number seven, you need to rewatch the entire video. And heaven help you if the creator didn't number them and you have to scrub through trying to find the one with the blue awning that looked good.</p>
+
+            <h2>What Triply Does Differently</h2>
+
+            <h3>Actual Place Extraction</h3>
+
+            <p>When you share a reel to <a href="/">Triply</a>, the AI analyzes everything -- the voiceover, on-screen text, captions, visual context -- and pulls out every place mentioned. Not just the obvious ones. The quickly-mentioned side spots. The places that flash on screen for a second. The neighborhood names that give you context.</p>
+
+            <p>Those 15 Paris restaurants? They all show up individually, with names, on a map, ready to save into your "Paris" collection. No rewatching. No screenshot-and-Google. No squinting at blurry text overlays.</p>
+
+            <h3>Everything on a Map</h3>
+
+            <p>Every place Triply extracts gets pinned to an interactive map. Open your "Bali" collection and you can see exactly where everything is relative to everything else. That cafe is actually right next to the temple you saved from a different reel three weeks ago? You'd never know that from an Instagram saved folder. You know it instantly from a map.</p>
+
+            <h3>Places Persist Even If the Reel Disappears</h3>
+
+            <p>Once Triply extracts places from a reel, those places exist independently. If the creator deletes the reel a month later, your places are still there -- named, mapped, and organized. The information has been liberated from the video. It's yours now.</p>
+
+            <h3>Searchable, Organized, Actually Useful</h3>
+
+            <p>Looking for that Melbourne cafe? Search for it. Looking at all places you've saved in Japan? Open the collection. Want to see which reel a place came from? It's linked. This is what an organized travel bucket list looks like, and it's miles away from a grid of video thumbnails.</p>
+
+            <h2>The Workflow Difference</h2>
+
+            <p>Let me walk through a real scenario to make this concrete.</p>
+
+            <p><strong>You see a reel: "10 Best Spots in Lisbon You Can't Miss"</strong></p>
+
+            <p><strong>Instagram Saved approach:</strong></p>
+            <ol>
+                <li>Tap the bookmark icon. Done.</li>
+                <li>Three months later, you're planning a Lisbon trip.</li>
+                <li>Scroll through 200+ saved reels trying to find the Lisbon ones.</li>
+                <li>Find the reel. Rewatch it. Pause at each spot.</li>
+                <li>Try to read the place name from blurry text overlay.</li>
+                <li>Search each place on Google Maps. One by one.</li>
+                <li>Repeat for every Lisbon reel you saved.</li>
+                <li>Realize two of the reels were deleted and you can't find them.</li>
+                <li>Give up after the fourth place and just Google "best Lisbon restaurants" instead.</li>
+            </ol>
+
+            <p><strong>Triply approach:</strong></p>
+            <ol>
+                <li>Tap share, select Triply. All 10 places appear on a map.</li>
+                <li>Save them to your "Lisbon" collection.</li>
+                <li>Three months later, open the collection. Everything's there.</li>
+                <li>See all your Lisbon places from every reel you've shared, all on one map.</li>
+                <li>Start planning.</li>
+            </ol>
+
+            <p>The first workflow takes 30 minutes and you'll probably give up halfway through. The second takes 10 seconds per reel and the collection builds itself over time.</p>
+
+            <div class="callout">
+                <p><strong>My honest take:</strong> Instagram Saved isn't bad for what it is. It's a quick bookmark for videos you want to watch again. But it was never designed to be a travel planning tool, and trying to use it as one is an exercise in frustration. Triply picks up exactly where Instagram's save button stops -- it actually understands what's in the video and turns it into something you can use.</p>
+            </div>
+
+            <h2>When Instagram Saved Is Fine</h2>
+
+            <p>To be fair, Instagram Saved is perfectly adequate if:</p>
+
+            <ul>
+                <li>You save reels for entertainment, not for planning</li>
+                <li>You only save a few travel reels and can remember what's in them</li>
+                <li>You act on recommendations immediately rather than saving for later</li>
+                <li>You don't need a map view or organized collections</li>
+                <li>You're on Android (Triply is iOS-only right now)</li>
+            </ul>
+
+            <h2>When You Need Triply</h2>
+
+            <p><a href="/">Triply</a> is the clear choice if:</p>
+
+            <ul>
+                <li>You have dozens (or hundreds) of saved travel reels that you've never gone back to</li>
+                <li>You want the places from Reels extracted automatically, without manual work</li>
+                <li>You want to see all your saved places on a map, organized by destination</li>
+                <li>You want your place data to survive even if creators delete their reels</li>
+                <li>You're building a long-term travel bucket list from social media content</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Instagram's save button is step one. It captures the intent -- "I want to remember this." But intent without action is just a folder full of forgotten videos.</p>
+
+            <p><strong>Triply is step two.</strong> It takes that intent and turns it into actionable information. Place names. Map pins. Organized collections. The stuff you actually need to go somewhere.</p>
+
+            <p>You don't have to stop saving reels on Instagram. Keep doing that. But also share them to Triply so that the places inside those reels actually make it into your travel plans instead of rotting in a folder you'll scroll past guiltily for the next six months.</p>
+
+            <p>Because let's be honest -- you know exactly how many of those saved reels you've gone back to. And you know it's not enough.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>Your saved Reels deserve better.</h3>
+            <p>Triply extracts places from Instagram Reels and puts them on a map -- automatically.</p>
+            <a href="https://link.triply.au/website" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Triply
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/triply-vs-google-maps" class="related-link">
+                    Triply vs Google Maps: Which Is Better for Travel Bucket Lists?
+                    <span>How Triply compares to the world's most popular map app.</span>
+                </a>
+                <a href="/blog/triply-vs-wanderlog" class="related-link">
+                    Triply vs Wanderlog: Which Travel App Actually Saves You Time?
+                    <span>Discovery tool vs. itinerary planner -- which do you need?</span>
+                </a>
+                <a href="/blog/saved-travel-reels-went-nowhere" class="related-link">
+                    I Saved 200+ Travel Reels and Went Nowhere -- Here's What I Do Now
+                    <span>The relatable problem behind why bucket list tools matter.</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

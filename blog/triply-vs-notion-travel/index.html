@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Triply vs Notion for Travel Planning: Which Should You Use?</title>
+    <meta name="description" content="Notion is infinitely flexible for travel planning but requires manual work. Triply automates the capture step with AI. Here's an honest comparison of both approaches.">
+    <link rel="canonical" href="https://triply.au/blog/triply-vs-notion-travel">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Triply vs Notion for Travel Planning: Which Should You Use?">
+    <meta property="og:description" content="Notion is infinitely flexible but requires manual work. Triply automates the capture step.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/triply-vs-notion-travel">
+    <meta property="og:image" content="https://triply.au/assets/og-triply.png">
+    <meta property="article:published_time" content="2026-04-11">
+    <meta property="article:author" content="https://triply.au">
+    <meta property="article:section" content="Travel">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Triply vs Notion for Travel Planning: Which Should You Use?">
+    <meta name="twitter:description" content="Notion is infinitely flexible but requires manual work. Triply automates the capture step.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-triply.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Triply vs Notion Travel", "item": "https://triply.au/blog/triply-vs-notion-travel" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Triply vs Notion for Travel Planning: Which Should You Use?",
+      "description": "Notion is infinitely flexible for travel planning but requires manual work. Triply automates the capture step with AI. An honest comparison of both approaches.",
+      "datePublished": "2026-04-11",
+      "dateModified": "2026-04-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Triply",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/triply-vs-notion-travel",
+      "image": "https://triply.au/assets/og-triply.png"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Notion good for travel planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notion is excellent for detailed travel planning if you're willing to set it up. You can create custom databases for places, itineraries, packing lists, and budgets. The downside is that everything requires manual input -- there's no way to automatically capture places from social media content."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Triply and Notion work together for travel planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, they complement each other well. Use Triply to automatically capture and map places from Instagram Reels, then transfer your favorites into a Notion travel database for detailed itinerary planning, notes, and coordination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Notion have a map view for travel places?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notion does not have a native map view. You can store addresses and coordinates in a database, but there's no built-in way to visualize them on a map. Third-party integrations exist but require additional setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the biggest difference between Triply and Notion for travel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The biggest difference is automation vs. flexibility. Triply automatically extracts places from Instagram Reels with zero manual input. Notion lets you build any travel system you want but requires you to manually enter every piece of information. They solve different parts of the travel planning problem."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            margin: 2rem 0; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; font-size: 0.9rem;
+        }
+        .comparison-table th {
+            padding: 1rem 1.25rem; text-align: left;
+            font-weight: 600; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(194, 113, 133, 0.05);
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #c8c8cd; font-weight: 300;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .feature-name { color: var(--text); font-weight: 500; }
+        .check { color: #34d399; }
+        .cross { color: #f87171; }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.85rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">triply</a>
+        </div>
+        <a href="https://link.triply.au/website" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Triply</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>Triply vs Notion Travel</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Comparison</div>
+            <h1>Triply vs Notion for Travel Planning: <span class="rose-text">Which Should You Use</span>?</h1>
+            <div class="article-meta">Apr 11, 2026 &middot; 8 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>If you're the kind of person who has a Notion workspace with a travel database, custom properties for cuisine type and neighborhood, a linked packing list, and a kanban board for trip status -- I respect you deeply. I also know that building that system took you an entire Sunday afternoon.</p>
+
+            <p>Notion is an incredible tool. For travel planning, it can be genuinely powerful. But there's a question that Notion's flexibility doesn't answer: <strong>how do the places get into the system in the first place?</strong></p>
+
+            <p>That's where the comparison with <a href="/">Triply</a> gets interesting. Because Triply and Notion aren't really competing -- they're solving different halves of the same problem. But the half that most people neglect is the one Triply handles, and it might be the half that matters most.</p>
+
+            <h2>The Quick Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Triply</th>
+                        <th>Notion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Extract places from Instagram Reels</td>
+                        <td><span class="check">Yes -- AI-powered, automatic</span></td>
+                        <td><span class="cross">No -- manual entry only</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Interactive map view</td>
+                        <td><span class="check">Yes -- built-in</span></td>
+                        <td><span class="cross">No native map (third-party needed)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Custom databases and properties</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- infinitely customizable</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Itinerary / schedule planning</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- calendars, timelines, etc.</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Packing lists, budget tracking</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- templates available</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Collaboration</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- real-time shared workspaces</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">AI place extraction from content</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Setup time</td>
+                        <td><span class="check">Zero -- works out of the box</span></td>
+                        <td><span class="cross">Significant -- templates help</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Price</td>
+                        <td>Free</td>
+                        <td>Free (Plus plan for more features)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Platform</td>
+                        <td>iOS</td>
+                        <td>iOS, Android, Web, Desktop</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>That table highlights the core tradeoff: Notion gives you infinite flexibility with manual effort. Triply gives you zero-effort capture with a focused feature set. Let's dig into what that means in practice.</p>
+
+            <h2>Where Notion Wins</h2>
+
+            <h3>You Can Build Literally Anything</h3>
+
+            <p>This is Notion's superpower and it's real. Want a database of restaurants with properties for cuisine, price range, neighborhood, rating, and a checkbox for "tried it"? Done. Want that linked to a daily itinerary with time blocks? Sure. Want a gallery view with photos and a kanban board that tracks planning status? Absolutely.</p>
+
+            <p>The travel templates people have built in Notion are genuinely impressive. Full trip hubs with linked databases for flights, hotels, activities, restaurants, packing lists, expense tracking, and visa information. If you want a single system that holds everything about your trip, Notion can be that system.</p>
+
+            <p>Triply doesn't try to be this. It's not a general-purpose planning tool. It does one thing, and the rest of your planning happens elsewhere.</p>
+
+            <h3>Collaboration and Sharing</h3>
+
+            <p>Planning a trip with friends or family? Notion's shared workspaces are hard to beat. Everyone can add places, leave notes, vote on options, and see the full plan. You can give different people different access levels. You can leave comments on specific entries. For group travel coordination, it's excellent.</p>
+
+            <p>Triply is a personal bucket list tool. There's no sharing or collaboration right now. If you need multiple people contributing to the same travel plan, Notion is the way to go.</p>
+
+            <h3>It Goes Way Beyond Places</h3>
+
+            <p>Notion handles the entire trip lifecycle. Research, planning, packing, budgeting, journaling, post-trip reflections -- all in one workspace. You can embed Google Maps links, attach flight confirmations, paste visa requirements, track expenses. It's a complete travel command center if you build it that way.</p>
+
+            <p>Triply is specifically about one thing: capturing places from Instagram Reels and organizing them into collections. It doesn't do packing lists. It doesn't track your budget. It's deliberately focused.</p>
+
+            <h3>Available Everywhere</h3>
+
+            <p>Notion works on iOS, Android, web, and desktop. You can plan on your laptop and check things on your phone. Triply is iOS-only right now, which limits who can use it and where.</p>
+
+            <h2>Where Triply Wins</h2>
+
+            <h3>The Manual Input Problem</h3>
+
+            <p>Here's where Notion's biggest strength becomes its biggest weakness for travel planning: <strong>everything requires manual input.</strong></p>
+
+            <p>Every place you add to your Notion travel database, you typed in by hand. Every restaurant name, every address, every detail -- someone sat there and entered it. For a carefully planned trip to one city with 15-20 places, that's manageable. Maybe an hour of work.</p>
+
+            <p>But what about the ongoing, passive process of discovering places? You see a reel about Tokyo ramen shops. Another about Barcelona rooftop bars. Another about hidden beaches in Greece. Each reel has 5-10 places. To get all of those into Notion, you'd need to:</p>
+
+            <ol>
+                <li>Watch the reel carefully</li>
+                <li>Pause at each place, catch the name</li>
+                <li>Open Notion</li>
+                <li>Navigate to the right database</li>
+                <li>Create a new entry</li>
+                <li>Type the place name</li>
+                <li>Add the city, maybe Google the address</li>
+                <li>Repeat for every place in the reel</li>
+                <li>Repeat for every reel you watch</li>
+            </ol>
+
+            <p>Nobody does this. And I mean nobody. The friction is too high. You might do it for the first reel, maybe the second, and then you go back to just saving the reel in Instagram and telling yourself you'll "add it to Notion later." You won't.</p>
+
+            <p>With <a href="/">Triply</a>, you share the reel. All the places appear. You save them. Done. The total friction is about five seconds per reel, compared to five minutes (or more) of manual data entry per reel in Notion.</p>
+
+            <h3>Zero Setup, Instant Utility</h3>
+
+            <p>Setting up a good Notion travel system takes time. You need to design the database structure, decide on properties, maybe find and adapt a template, learn the quirks of linked databases. It's an investment that pays off if you're a Notion power user, but it's a real barrier for people who just want to save places from reels.</p>
+
+            <p>Triply works the moment you install it. Share a reel, see places, save them. There's no template to configure, no database to design, no properties to decide on. The simplicity is the feature.</p>
+
+            <h3>A Map That Isn't an Afterthought</h3>
+
+            <p>Notion doesn't have a map view. You can store addresses and coordinates in a database, but you can't see your places on a map without a third-party integration. There are workarounds -- embedding Google My Maps, using Notion integrations -- but they're clunky and add another layer of setup.</p>
+
+            <p>Triply's map is the core experience. Every place you save appears on an interactive map immediately. Open your "Japan" collection and you see all your saved places geographically. You can spot clusters, find places near each other, and get a spatial sense of your bucket list. For travel planning, a map isn't optional -- it's essential. And in Triply, it's built in from day one.</p>
+
+            <h3>AI That Actually Understands Content</h3>
+
+            <p>Notion's AI features are impressive for summarizing pages and drafting text, but they can't watch an Instagram Reel and figure out what places are mentioned in it. That's a fundamentally different kind of AI task -- analyzing audio, reading on-screen text, understanding visual context, and matching it all to real locations.</p>
+
+            <p>Triply's AI is built specifically for this. It can handle fast-talking creators, briefly-flashed text overlays, mispronounced place names, and unnamed-but-recognizable locations. It's doing the work that would take you 10 minutes of careful rewatching and Googling.</p>
+
+            <h2>The Real Question: Capture vs. Organize</h2>
+
+            <p>The fundamental difference is about where the bottleneck is in your travel planning process.</p>
+
+            <p>If your problem is <strong>"I have all these places but I need to organize them into a proper plan"</strong> -- Notion is your tool. Its flexibility lets you structure information however you want.</p>
+
+            <p>If your problem is <strong>"I keep seeing amazing places on Instagram but none of them make it into my planning system"</strong> -- Triply is your tool. It eliminates the friction between discovery and capture.</p>
+
+            <p>For most people I talk to, the second problem is the bigger one. They don't have trouble organizing. They have trouble capturing. The places never make it out of the reel into any system at all -- not Notion, not Google Maps, not anything. They just stay saved in Instagram forever.</p>
+
+            <h2>How They Work Together (Best of Both Worlds)</h2>
+
+            <p>Here's the thing that makes this comparison less of a "vs" and more of a "plus": Triply and Notion complement each other perfectly.</p>
+
+            <ol>
+                <li><strong>Triply for capture:</strong> Every time you see a travel reel, share it to Triply. Places get extracted and saved into collections automatically. Zero friction, zero effort.</li>
+                <li><strong>Review and curate:</strong> Open Triply periodically and browse your collections on the map. Star the places you're most interested in. Get a sense of where you might want to go.</li>
+                <li><strong>Notion for detailed planning:</strong> When you decide on a trip, take your top picks from Triply and add them to your Notion trip hub. Now you can build the full itinerary, add notes, coordinate with friends, track the budget -- all the detailed stuff Notion excels at.</li>
+            </ol>
+
+            <p>Triply fills the top of the funnel. Notion handles the middle and bottom. Together, you've got a system where places flow from Instagram to bucket list to trip plan without getting lost in between.</p>
+
+            <div class="callout">
+                <p><strong>My honest take:</strong> If I had to pick one, and I was a Notion power user, I'd probably keep using Notion and just accept the manual work. But I don't pick one. I use Triply for capture because it turns a 5-minute task into a 5-second task, and I use Notion for everything else. The combination is significantly better than either tool alone.</p>
+            </div>
+
+            <h2>When Notion Is All You Need</h2>
+
+            <p>Stick with Notion if:</p>
+
+            <ul>
+                <li>You discover places from blogs, guidebooks, and Google searches rather than Instagram Reels</li>
+                <li>You're already a Notion power user with a travel system set up</li>
+                <li>You need collaboration features for group trip planning</li>
+                <li>You want one tool for everything -- places, itineraries, packing, budget</li>
+                <li>You're on Android (Triply is iOS-only)</li>
+                <li>You don't mind the manual data entry</li>
+            </ul>
+
+            <h2>When You Need Triply</h2>
+
+            <p><a href="/">Triply</a> is worth adding if:</p>
+
+            <ul>
+                <li>You discover places through Instagram Reels regularly</li>
+                <li>You have saved reels full of places that never made it into Notion (or anywhere else)</li>
+                <li>You want the capture step to be completely automated</li>
+                <li>You want a map view of your bucket list without setting up third-party integrations</li>
+                <li>You're willing to use two tools to get a better result than either one alone</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p><strong>Notion is the better planning tool.</strong> If you need detailed itineraries, collaborative workspaces, custom databases, and a single hub for everything trip-related, Notion wins. It's not even close.</p>
+
+            <p><strong>Triply is the better capture tool.</strong> If you need places to flow from Instagram Reels into an organized, mapped bucket list without any manual work, Triply wins. There's nothing in Notion (or anywhere else) that does this.</p>
+
+            <p>The smartest approach is both. Let Triply handle the top of the funnel -- the effortless, ongoing capture of places from your feed. Let Notion handle the rest -- the organizing, planning, and collaborating. You get automated capture and infinite flexibility. The best of both worlds, no compromises.</p>
+
+            <p>Because the most beautiful Notion travel template in the world is useless if you never actually add places to it. And if you're like most people, you're not going to manually type in every restaurant from every reel you watch. You're just not. Let the AI do that part.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>Fill your travel databases automatically.</h3>
+            <p>Triply captures places from Instagram Reels with zero manual input. Pair it with your favorite planning tool.</p>
+            <a href="https://link.triply.au/website" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Triply
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/triply-vs-wanderlog" class="related-link">
+                    Triply vs Wanderlog: Which Travel App Actually Saves You Time?
+                    <span>Discovery tool vs. itinerary planner -- which do you need?</span>
+                </a>
+                <a href="/blog/triply-vs-instagram-saved" class="related-link">
+                    Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough
+                    <span>Why bookmarking Reels doesn't actually help you travel.</span>
+                </a>
+                <a href="/blog/triply-vs-google-maps" class="related-link">
+                    Triply vs Google Maps: Which Is Better for Travel Bucket Lists?
+                    <span>How Triply compares to the world's most popular map app.</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

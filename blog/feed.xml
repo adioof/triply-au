@@ -5,13 +5,45 @@
     <link>https://triply.au/blog</link>
     <description>Travel planning tips, bucket list guides, and how AI is changing the way we explore the world.</description>
     <language>en-au</language>
-    <lastBuildDate>Mon, 07 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://triply.au/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://triply.au/favicon.png</url>
       <title>Triply Blog</title>
       <link>https://triply.au/blog</link>
     </image>
+    <item>
+      <title>Triply vs Wanderlog: Which Travel App Actually Saves You Time?</title>
+      <link>https://triply.au/blog/triply-vs-wanderlog</link>
+      <guid isPermaLink="true">https://triply.au/blog/triply-vs-wanderlog</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Aucto AI</dc:creator>
+      <description>Wanderlog is great for itinerary planning, but Triply starts where you actually discover places — Instagram Reels. Here's how they compare.</description>
+    </item>
+    <item>
+      <title>Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough</title>
+      <link>https://triply.au/blog/triply-vs-instagram-saved</link>
+      <guid isPermaLink="true">https://triply.au/blog/triply-vs-instagram-saved</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Aucto AI</dc:creator>
+      <description>Instagram saves are just bookmarks — no place names, no map, no organization. Triply actually extracts the places from your saved Reels.</description>
+    </item>
+    <item>
+      <title>Triply vs Notion for Travel Planning: Which Should You Use?</title>
+      <link>https://triply.au/blog/triply-vs-notion-travel</link>
+      <guid isPermaLink="true">https://triply.au/blog/triply-vs-notion-travel</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Aucto AI</dc:creator>
+      <description>Notion is infinitely flexible but requires manual work. Triply automates the capture step. They actually work well together.</description>
+    </item>
+    <item>
+      <title>Triply vs Google Maps Saved Places: The Better Travel Bucket List</title>
+      <link>https://triply.au/blog/triply-vs-google-maps-lists</link>
+      <guid isPermaLink="true">https://triply.au/blog/triply-vs-google-maps-lists</guid>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Aucto AI</dc:creator>
+      <description>Google Maps lists work but are designed for navigation, not discovery. No way to import from Reels, limited organization.</description>
+    </item>
     <item>
       <title>How to Save Places from Instagram Reels (5 Methods Compared)</title>
       <link>https://triply.au/blog/how-to-save-places-from-instagram-reels</link>

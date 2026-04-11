@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Triply vs Google Maps Saved Places: The Better Travel Bucket List</title>
+    <meta name="description" content="Google Maps lists are great for navigation but weren't designed for travel discovery. Here's why Triply's AI-powered Reel extraction builds better bucket lists than Google Maps Saved Places.">
+    <link rel="canonical" href="https://triply.au/blog/triply-vs-google-maps-lists">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Triply vs Google Maps Saved Places: The Better Travel Bucket List">
+    <meta property="og:description" content="Google Maps lists are built for navigation, not discovery. Here's the better way to build travel bucket lists.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://triply.au/blog/triply-vs-google-maps-lists">
+    <meta property="og:image" content="https://triply.au/assets/og-triply.png">
+    <meta property="article:published_time" content="2026-04-11">
+    <meta property="article:author" content="https://triply.au">
+    <meta property="article:section" content="Travel">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Triply vs Google Maps Saved Places: The Better Travel Bucket List">
+    <meta name="twitter:description" content="Google Maps lists are built for navigation, not discovery. Here's the better way to build travel bucket lists.">
+    <meta name="twitter:image" content="https://triply.au/assets/og-triply.png">
+
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://triply.au" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://triply.au/blog" },
+        { "@type": "ListItem", "position": 3, "name": "Triply vs Google Maps Lists", "item": "https://triply.au/blog/triply-vs-google-maps-lists" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Triply vs Google Maps Saved Places: The Better Travel Bucket List",
+      "description": "Google Maps lists are great for navigation but weren't designed for travel discovery. Here's why Triply's AI-powered Reel extraction builds better bucket lists.",
+      "datePublished": "2026-04-11",
+      "dateModified": "2026-04-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Triply",
+        "url": "https://triply.au"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "triply.au",
+        "url": "https://triply.au"
+      },
+      "mainEntityOfPage": "https://triply.au/blog/triply-vs-google-maps-lists",
+      "image": "https://triply.au/assets/og-triply.png"
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I import Instagram Reel places into Google Maps lists?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not directly. Google Maps has no way to extract places from Instagram Reels. You'd need to manually identify each place from the Reel, search for it in Google Maps, and save it to a list one by one. Triply automates this entire process using AI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many lists can you create in Google Maps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Maps doesn't have a hard limit on lists, but the organization options are basic -- you get a name and optional description per list. There are no tags, categories, sub-lists, or the ability to track where a place recommendation came from."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Triply replace Google Maps for travel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Triply is for building bucket lists from Instagram Reels, while Google Maps is for navigation, directions, and finding local businesses. Most travelers use both -- Triply for discovering and saving places, and Google Maps for getting around once they're on the ground."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Google Maps Saved Places good for travel bucket lists?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works for basic list-keeping, but it has significant limitations for bucket lists. There's no way to import from social media, limited organization beyond basic lists, no way to track where you found a recommendation, and the interface is designed for navigation rather than trip dreaming. Triply is purpose-built for this use case."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+            --rose-dim: rgba(194, 113, 133, 0.08);
+            --rose-glow: rgba(194, 113, 133, 0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 10, 11, 0.85);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 0.8rem; color: var(--text-muted); text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text); }
+
+        .logo {
+            font-size: 1.25rem; font-weight: 700; color: var(--text);
+            text-decoration: none; letter-spacing: -0.03em;
+        }
+
+        .nav-cta {
+            font-size: 0.85rem; color: var(--rose);
+            border: 1px solid rgba(194, 113, 133, 0.3);
+            padding: 0.5rem 1.25rem; border-radius: 8px;
+            text-decoration: none; font-weight: 500; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--rose-dim); border-color: var(--rose); }
+
+        .breadcrumbs {
+            max-width: 740px; margin: 0 auto; padding: 6.5rem 2rem 0;
+            font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--rose); }
+        .breadcrumbs .sep { margin: 0 0.4rem; opacity: 0.4; }
+
+        .article { max-width: 740px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+
+        .article-header { margin-bottom: 3.5rem; }
+
+        .article-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem; color: var(--rose);
+            letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .article-header h1 {
+            font-size: clamp(1.85rem, 4.5vw, 2.6rem); font-weight: 800;
+            line-height: 1.15; letter-spacing: -0.03em;
+            margin-bottom: 1.25rem;
+        }
+
+        .rose-text {
+            background: linear-gradient(135deg, var(--rose), var(--rose-light), #e8a0b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+
+        .article-meta {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .prose h2 {
+            font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+            margin-top: 3rem; margin-bottom: 1rem; line-height: 1.25;
+        }
+
+        .prose h3 {
+            font-size: 1.2rem; font-weight: 600;
+            margin-top: 2.25rem; margin-bottom: 0.75rem; line-height: 1.3;
+        }
+
+        .prose p {
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 1.25rem; font-weight: 300;
+        }
+
+        .prose strong { color: var(--text); font-weight: 600; }
+
+        .prose a { color: var(--rose); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+        .prose a:hover { color: var(--rose-light); }
+
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem; padding-left: 1.5rem;
+            color: #c8c8cd; font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+        }
+        .prose li { margin-bottom: 0.5rem; }
+
+        .prose blockquote {
+            border-left: 3px solid var(--rose);
+            padding: 1rem 1.5rem; margin: 2rem 0;
+            background: var(--rose-dim); border-radius: 0 10px 10px 0;
+            color: #c8c8cd; font-style: italic;
+        }
+
+        .prose hr {
+            border: none; border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            margin: 2rem 0; background: var(--surface);
+            border: 1px solid var(--border); border-radius: 14px;
+            overflow: hidden; font-size: 0.9rem;
+        }
+        .comparison-table th {
+            padding: 1rem 1.25rem; text-align: left;
+            font-weight: 600; font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(194, 113, 133, 0.05);
+        }
+        .comparison-table td {
+            padding: 0.85rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            color: #c8c8cd; font-weight: 300;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .feature-name { color: var(--text); font-weight: 500; }
+        .check { color: #34d399; }
+        .cross { color: #f87171; }
+
+        .callout {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 2rem; margin: 2rem 0;
+            position: relative; overflow: hidden;
+        }
+        .callout::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(194, 113, 133, 0.4), transparent);
+        }
+        .callout p { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 3.5rem 2rem; margin-top: 3rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--rose), transparent);
+        }
+        .cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+        .cta-box p { color: var(--text-muted); margin-bottom: 2rem; font-weight: 300; }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            background: var(--rose); color: white;
+            padding: 0.9rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.25s;
+            box-shadow: 0 4px 15px rgba(194, 113, 133, 0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(194, 113, 133, 0.35); }
+
+        .related-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .related-section h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+        .related-links { display: flex; flex-direction: column; gap: 0.75rem; }
+        .related-link {
+            display: block; padding: 1.25rem 1.5rem;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; text-decoration: none; color: var(--text);
+            font-size: 0.95rem; font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: rgba(194, 113, 133, 0.3); background: #15151a; }
+        .related-link span { color: var(--text-muted); font-size: 0.8rem; font-weight: 300; display: block; margin-top: 0.25rem; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+        .footer-links { display: flex; gap: 1.5rem; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.25rem; }
+            .breadcrumbs { padding-top: 5.5rem; }
+            .article { padding: 2rem 1.25rem 4rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.7rem 0.85rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header>
+    <nav>
+        <div class="nav-left">
+            <a href="/blog" class="back-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                blog
+            </a>
+            <a href="/" class="logo">triply</a>
+        </div>
+        <a href="https://link.triply.au/website" class="nav-cta">Get on App Store</a>
+    </nav>
+    </header>
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/">Triply</a><span class="sep">/</span>
+        <a href="/blog">Blog</a><span class="sep">/</span>
+        <span>Triply vs Google Maps Lists</span>
+    </div>
+
+    <main>
+    <article class="article">
+        <header class="article-header fade-in">
+            <div class="article-label">Comparison</div>
+            <h1>Triply vs Google Maps Saved Places: The Better <span class="rose-text">Travel Bucket List</span></h1>
+            <div class="article-meta">Apr 11, 2026 &middot; 7 min read</div>
+        </header>
+
+        <div class="prose fade-in">
+
+            <p>Google Maps has a "Saved" tab. You can create lists. You can star places. You can even share those lists with friends. On the surface, it sounds like everything you need for a travel bucket list. And for years, that's what I used.</p>
+
+            <p>But here's the thing I eventually realized: Google Maps Saved Places is a feature that was bolted onto a navigation app. It works. It's functional. But it was never designed with the "I saw this on Instagram and I need to save it" workflow in mind. And that workflow is how most of us actually build our travel wishlists in 2026.</p>
+
+            <p>This is a different comparison from <a href="/blog/triply-vs-google-maps">Triply vs Google Maps for navigation</a>. Here, I'm specifically looking at the Saved Places and Lists features -- the part of Google Maps people try to use as a bucket list tool -- and how it compares to what <a href="/">Triply</a> is built to do.</p>
+
+            <h2>The Quick Comparison</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Triply</th>
+                        <th>Google Maps Lists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Import places from Instagram Reels</td>
+                        <td><span class="check">Yes -- AI-powered, automatic</span></td>
+                        <td><span class="cross">No -- manual search and save</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Map visualization</td>
+                        <td><span class="check">Yes -- collection-based map view</span></td>
+                        <td><span class="check">Yes -- list view on map</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Custom lists / collections</td>
+                        <td><span class="check">Yes -- by trip, theme, vibe</span></td>
+                        <td><span class="check">Yes -- named lists</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Track where recommendation came from</td>
+                        <td><span class="check">Yes -- links back to original Reel</span></td>
+                        <td><span class="cross">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Add notes to saved places</td>
+                        <td><span class="check">Yes</span></td>
+                        <td><span class="check">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Share lists with others</td>
+                        <td><span class="cross">Not yet</span></td>
+                        <td><span class="check">Yes -- shareable links</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Business hours, reviews, photos</td>
+                        <td><span class="cross">Limited</span></td>
+                        <td><span class="check">Yes -- comprehensive</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Directions from saved place</td>
+                        <td><span class="cross">No</span></td>
+                        <td><span class="check">Yes -- one tap</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Bulk import from content</td>
+                        <td><span class="check">Yes -- all places from one Reel</span></td>
+                        <td><span class="cross">One place at a time only</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Price</td>
+                        <td>Free</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Platform</td>
+                        <td>iOS</td>
+                        <td>iOS, Android, Web</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Google Maps Lists has the advantage of being part of an app you already use. But when you look at the actual list management and capture experience, the gaps become clear. Let me walk through them.</p>
+
+            <h2>Where Google Maps Lists Works Fine</h2>
+
+            <h3>It's Already on Your Phone</h3>
+
+            <p>The best tool is the one you already have. Google Maps is on basically everyone's phone. The Saved tab is right there. You don't need to install anything new, create an account, or learn a new app. You can save a place in two taps while you're already using Maps for something else. That's a real advantage, and I won't pretend it isn't.</p>
+
+            <h3>Rich Place Information</h3>
+
+            <p>When you save a place in Google Maps, you get everything Google knows about it: hours, phone number, photos, reviews, price level, how busy it is, website. That's decades of data collection, and it's genuinely useful when you're deciding whether to visit a place. Triply gives you the place name and location, but the depth of business information doesn't compare.</p>
+
+            <h3>One-Tap Navigation</h3>
+
+            <p>Saved a restaurant in your Google Maps list? One tap and you've got directions. That seamless flow from "saved place" to "navigating there" is incredibly convenient when you're actually on a trip. Triply doesn't do navigation -- you'd open the place in Google Maps for that anyway.</p>
+
+            <h3>Shareable Lists</h3>
+
+            <p>Google Maps lets you share lists with anyone via a link. Planning a trip with friends? Share your "Tokyo Eats" list and everyone can see it, add to it, and navigate to places from it. It's simple and it works. Triply doesn't have sharing yet.</p>
+
+            <h2>Where Google Maps Lists Falls Short</h2>
+
+            <h3>The Instagram-to-Maps Pipeline Doesn't Exist</h3>
+
+            <p>This is the big one. You watch a reel about "12 Hidden Gems in Bali." You want all twelve places in your Google Maps. Here's what that process looks like:</p>
+
+            <ol>
+                <li>Watch the reel. Try to catch the first place name.</li>
+                <li>Switch to Google Maps.</li>
+                <li>Search for the place. Hope you spelled the Balinese name correctly.</li>
+                <li>Find the right one among three similar results.</li>
+                <li>Save it to a list.</li>
+                <li>Switch back to Instagram.</li>
+                <li>Resume the reel. Try to catch place number two.</li>
+                <li>Repeat ten more times.</li>
+            </ol>
+
+            <p>Twelve places, twelve app switches, twelve searches, maybe twenty minutes of work. For one reel. And you watch how many travel reels a week? Be honest.</p>
+
+            <p>With <a href="/">Triply</a>, you share the reel once. All twelve places appear on a map. Save them to your Bali collection. Maybe fifteen seconds total. That's not a marginal improvement. That's an entirely different experience.</p>
+
+            <h3>No Source Tracking</h3>
+
+            <p>After a few months of saving places to Google Maps lists, you'll have dozens of pins and no idea where any of them came from. Why did you save that particular cafe? Was it from a reel? A friend's recommendation? A travel blog? Google Maps doesn't track provenance.</p>
+
+            <p>This matters more than you think. When you're planning a trip and looking at your saved list, context is everything. "This place was in that reel where the creator was raving about the handmade pasta" is useful information. "This is a pin you saved at some point for some reason" is not.</p>
+
+            <p>Triply links every place back to the original reel. You can trace any recommendation to its source. Months later, you can rewatch the reel and remember exactly why you wanted to go there.</p>
+
+            <h3>Lists Get Messy Fast</h3>
+
+            <p>Google Maps lists are flat. You get a name, an optional description, and a list of places. That's it. No categories within lists. No tags. No way to distinguish between "definitely going" and "maybe someday." No separation between restaurants and activities and hotels.</p>
+
+            <p>When you're saving three or four places, this is fine. When you've been building a bucket list for six months and you have 200 pins across fifteen lists, it becomes a wall of pins with no hierarchy or organization. You end up with a list called "Want to Go" that has places from thirty different countries, and finding the ones for your upcoming Tokyo trip means scrolling through everything.</p>
+
+            <p>Triply's collections are designed around how people actually think about travel. By destination, by trip, by vibe. And the map view means you can always see the geographic spread of your saves, not just a text list.</p>
+
+            <h3>One Place at a Time, Every Time</h3>
+
+            <p>Google Maps forces you to add places individually. Search, find, save, repeat. There's no batch import. No "add all places from this content." No way to speed up the process even slightly.</p>
+
+            <p>This is fine for the "I'm already here and want to save this restaurant" use case. It's terrible for the "I just watched a reel with ten places and want to save all of them" use case. And the second use case is increasingly how people build travel bucket lists.</p>
+
+            <h3>Designed for Search, Not Discovery</h3>
+
+            <p>Google Maps Saved is built around the assumption that you know what you're looking for. You search for a specific place, you find it, you save it. The entire flow starts with a search query.</p>
+
+            <p>But travel discovery in 2026 doesn't start with a search query. It starts with a reel you weren't looking for, from a creator you stumbled across, showing places you'd never heard of. The places don't come from your intention -- they come from content you're already consuming. Google Maps has no way to participate in that flow.</p>
+
+            <h2>The Collection Philosophy</h2>
+
+            <p>There's a deeper difference worth calling out. Google Maps treats saved places as data points -- coordinates with labels. Triply treats them as discoveries -- places that came from specific content, organized into collections with context and narrative.</p>
+
+            <p>A Google Maps list says: "Restaurant Name, Address, 4.5 stars."</p>
+
+            <p>A Triply collection says: "Restaurant Name -- from that reel about hidden pasta places in Rome, part of your Italy 2027 dream trip."</p>
+
+            <p>Both give you the same location. But one gives you the story, and the story is often what makes you actually visit.</p>
+
+            <div class="callout">
+                <p><strong>My honest take:</strong> Google Maps Saved Places is good enough if you're saving a handful of places you already know about. But as a bucket list tool -- something you build over months of discovering places through social media -- it's frustratingly manual and lacking in organization. Triply was built specifically for that long-term bucket list use case, and it shows.</p>
+            </div>
+
+            <h2>When Google Maps Lists Work Fine</h2>
+
+            <p>Stick with Google Maps Saved if:</p>
+
+            <ul>
+                <li>You mostly save places you encounter in real life or find through Google searches</li>
+                <li>You want one-tap navigation from your saved places</li>
+                <li>You need business hours, reviews, and detailed place info alongside your saves</li>
+                <li>You share lists with friends and want them to use Maps for navigation</li>
+                <li>You save a small number of places and don't need complex organization</li>
+                <li>You're on Android</li>
+            </ul>
+
+            <h2>When You Need Triply</h2>
+
+            <p><a href="/">Triply</a> is the better choice if:</p>
+
+            <ul>
+                <li>You build your bucket list from Instagram Reels and social media content</li>
+                <li>You're tired of the manual search-and-save process for every place in every reel</li>
+                <li>You want to know where each recommendation came from</li>
+                <li>You have hundreds of saved places and need better organization than flat lists</li>
+                <li>You want to bulk-capture all places from a single reel in seconds</li>
+                <li>You're building a long-term travel wishlist, not just saving nearby restaurants</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p><strong>Google Maps Saved Places is a feature.</strong> It's a good feature, attached to an incredible app. For saving places you already know about and navigating to them later, it works perfectly.</p>
+
+            <p><strong>Triply is a purpose-built bucket list tool.</strong> It's designed from the ground up for the specific workflow of turning social media travel content into organized, mapped, contextual collections that you'll actually use to plan trips.</p>
+
+            <p>If your bucket list comes from Google searches and word-of-mouth, Google Maps is probably sufficient. If your bucket list comes from Instagram Reels -- and let's be real, more and more of it does -- then you need something designed for that flow. You need something that bridges the gap between "I just saw something amazing" and "that place is saved, mapped, and organized."</p>
+
+            <p>Google Maps doesn't bridge that gap. It wasn't designed to. Triply was.</p>
+
+            <p>Use Google Maps for navigating. Use Triply for dreaming. Your bucket list will thank you.</p>
+
+        </div>
+
+        <div class="cta-box fade-in">
+            <h3>Build a bucket list that actually works.</h3>
+            <p>Triply turns Instagram Reels into mapped, organized travel collections -- automatically.</p>
+            <a href="https://link.triply.au/website" class="btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Triply
+            </a>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Posts</h2>
+            <div class="related-links">
+                <a href="/blog/triply-vs-google-maps" class="related-link">
+                    Triply vs Google Maps: Which Is Better for Travel Bucket Lists?
+                    <span>The broader comparison -- navigation, search, and more.</span>
+                </a>
+                <a href="/blog/triply-vs-instagram-saved" class="related-link">
+                    Triply vs Instagram Saved Collections: Why Saving Reels Isn't Enough
+                    <span>Why bookmarking Reels doesn't actually help you travel.</span>
+                </a>
+                <a href="/blog/triply-vs-wanderlog" class="related-link">
+                    Triply vs Wanderlog: Which Travel App Actually Saves You Time?
+                    <span>Discovery tool vs. itinerary planner -- which do you need?</span>
+                </a>
+            </div>
+        </div>
+
+    </article>
+    </main>
+
+    <footer>
+        <span>&copy; 2026 <a href="/">triply.au</a></span>
+        <div class="footer-links">
+            <a href="/">triply.au</a>
+            <a href="/blog">Blog</a>
+            <a href="mailto:connect@triply.au">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
