@@ -39,6 +39,7 @@ Aucto AI — founded by Aditya Agarwal (@adioof), software engineer based in Syd
 - App Store: https://apps.apple.com/us/app/triply-ai-travel-curator/id6758535253
 - Destinations: https://triply.au/destinations
 - Blog: https://triply.au/blog
+- Blog RSS: https://triply.au/blog/feed.xml
 
 ## Destination Guides
 
