@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://triply.au/sitemap.xml
+
+# LLM context
+LLMs-txt: https://triply.au/llms.txt
