@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triply — Turn Reels into Travel Bucket Lists</title>
-    <meta name="description" content="Share an Instagram Reel, get every place on a map. Triply uses AI to extract travel destinations from reels and organize your dream trips.">
+    <title>Triply — Turn Instagram Reels into Travel Bucket Lists | AI Travel App</title>
+    <meta name="description" content="Triply extracts every travel place from Instagram Reels using AI. Share a reel, get every restaurant, beach, and landmark on a map. Free on the App Store.">
     <meta name="robots" content="index, follow">
     <meta name="apple-itunes-app" content="app-id=6758535253">
     <meta name="theme-color" content="#09090b">
@@ -34,7 +34,8 @@
     {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
-      "name": "Triply",
+      "name": "Triply — AI Travel Curator",
+      "alternateName": ["Triply", "Triply App"],
       "description": "Turn Instagram Reels into travel bucket lists. Share a reel, and Triply extracts every destination using AI — mapped, organized, and ready to explore.",
       "operatingSystem": "iOS 16.0+",
       "applicationCategory": "TravelApplication",
@@ -70,12 +71,24 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Triply",
+      "alternateName": ["Triply App", "Triply AI Travel Curator", "Triply Travel"],
       "url": "https://triply.au",
       "description": "Turn Instagram Reels into travel bucket lists. AI-powered place extraction, mapping, and trip organization.",
       "publisher": {
         "@type": "Organization",
         "name": "Aucto AI",
-        "url": "https://triply.au"
+        "url": "https://triply.au",
+        "logo": "https://triply.au/favicon.png",
+        "sameAs": [
+          "https://apps.apple.com/us/app/triply-ai-travel-curator/id6758535253",
+          "https://www.instagram.com/triply.au",
+          "https://aucto.ai"
+        ]
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://triply.au/destinations/{search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
