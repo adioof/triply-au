@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Triply — Feedback</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK8JJZB507"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SK8JJZB507');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0b;
+            --surface: #111114;
+            --border: #1c1c22;
+            --border-focus: rgba(194, 113, 133, 0.5);
+            --text: #fafafa;
+            --text-muted: #71717a;
+            --rose: #c27185;
+            --rose-light: #d4899b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg); color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+
+        .container {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.4rem;
+        }
+
+        .page-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .field {
+            margin-bottom: 2rem;
+        }
+
+        .field label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .field .hint {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 0.6rem;
+        }
+
+        .field textarea,
+        .field input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.92rem;
+            padding: 0.9rem 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+        }
+
+        .field textarea {
+            min-height: 110px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .field textarea:focus,
+        .field input:focus {
+            border-color: var(--border-focus);
+        }
+
+        .field textarea::placeholder,
+        .field input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .required {
+            color: var(--rose);
+            margin-left: 2px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--rose);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0.9rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            -webkit-appearance: none;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success {
+            display: none;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .success.show {
+            display: block;
+        }
+
+        .success h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .success p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        form.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="page-title">Feedback</h1>
+    <p class="page-sub">Help us make Triply better. Takes 30 seconds.</p>
+
+    <form id="feedbackForm" name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="feedback">
+        <p style="display:none"><input name="bot-field"></p>
+
+        <div class="field">
+            <label for="enjoy">What do you enjoy about Triply?</label>
+            <span class="hint">Features you love, things that work well, what keeps you coming back</span>
+            <textarea id="enjoy" name="enjoy" placeholder="e.g. I love how it pulls all the places from a reel in seconds..."></textarea>
+        </div>
+
+        <div class="field">
+            <label for="improve">What could be better?</label>
+            <span class="hint">Bugs, missing features, things that frustrate you</span>
+            <textarea id="improve" name="improve" placeholder="e.g. Sometimes it misses places that are clearly in the caption..."></textarea>
+        </div>
+
+        <div class="field">
+            <label for="email">Your email<span class="required">*</span></label>
+            <span class="hint">So we can follow up if needed</span>
+            <input type="email" id="email" name="email" required placeholder="you@email.com">
+        </div>
+
+        <button type="submit" class="submit-btn">Send Feedback</button>
+    </form>
+
+    <div class="success" id="successMsg">
+        <h2>Thanks for the feedback!</h2>
+        <p>We read every response. If you left your email, we may reach out to learn more.</p>
+    </div>
+</div>
+
+<script>
+    // Prefill email from URL param: /feedback?email=user@email.com
+    const params = new URLSearchParams(window.location.search);
+    const emailParam = params.get('email');
+    if (emailParam) {
+        document.getElementById('email').value = emailParam;
+    }
+
+    // Handle form submit
+    document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('.submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+            await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(new FormData(form)).toString(),
+            });
+            form.classList.add('hidden');
+            document.getElementById('successMsg').classList.add('show');
+        } catch (err) {
+            btn.disabled = false;
+            btn.textContent = 'Send Feedback';
+            alert('Something went wrong. Please try again.');
+        }
+    });
+</script>
+
+</body>
+</html>
